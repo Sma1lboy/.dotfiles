@@ -4,7 +4,7 @@
 #do it in your root dir
 CURR_DIR=$(dirname $0)
 
-echo $CURR_DIR
+echo "Moving tmux config to root dir..."
 ln -s -f ~/.dotfiles/.tmux.conf ~/
 cp ~/.dotfiles/.tmux.conf.local ~/
 tmux source-file ~/.tmux.conf
