@@ -7,4 +7,5 @@ brew "git"
 brew "tmux"
 brew "neofetch"
 brew "node"
-
+brew "neovim"
+brew "gcc"
