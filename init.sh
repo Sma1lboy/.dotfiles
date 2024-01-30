@@ -5,7 +5,7 @@
 
 CONFIG_DIR="~/.config"
 
-if [ -d $CONFIG_DIR ]; then
+if ! [ -d $CONFIG_DIR ]; then
   mkdir CONFIG_DIR
 fi
 
