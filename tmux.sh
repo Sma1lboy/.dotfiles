@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# call this script inside of project directory
+#if need call it separately
+#do it in your root dir
 CURR_DIR=$(dirname $0)
 
 echo $CURR_DIR
