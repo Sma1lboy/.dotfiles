@@ -1,0 +1,22 @@
+[user]
+	name = Jackson Chen
+	email = cchen686@wisc.edu 
+[init]
+  defaultBranch = main
+[core]
+	excludesfile = /Users/jacksonchen/.gitignore_global
+[push]
+	autoSetupRemote = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/jacksonchen/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/jacksonchen/.stCommitMsg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
