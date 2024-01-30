@@ -34,7 +34,7 @@ This directory contains my Neovim configuration files.
 
 ### **Content**
 
-![Alt text](README/nvim.png)
+![Alt text](./readme/nvim.png)
 
 ### Feature plugin I like to using
 
@@ -58,7 +58,7 @@ This is my easy Vim configuration directory. for sometime you cannot using nvim
 
 ### Content
 
-![image-20240130005457499](README/image-20240130005457499.png)
+![image-20240130005457499](./readme/image-20240130005457499.png)
 
 ### The feature I like
 
@@ -84,7 +84,7 @@ This file holds my local tmux configuration overrides.
 
 ### Content
 
-![image-20240130010129554](README/image-20240130010129554.png)
+![image-20240130010129554](./readme/image-20240130010129554.png)
 
 Not fancy, keep simple, only showing the data you really need.
 
@@ -96,7 +96,7 @@ My Zsh shell configuration is defined in this file.
 
 ## Content
 
-![image-20240130010323289](README/image-20240130010323289.png)
+![image-20240130010323289](./readme/image-20240130010323289.png)
 
 Zsh with
 
