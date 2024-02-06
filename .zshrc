@@ -26,6 +26,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
+POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
@@ -87,6 +88,7 @@ plugins=(
   copyfile
   copybuffer
   dirhistory
+  virtualenv
 #  zsh_reload
   history
  # osx
@@ -133,4 +135,5 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 alias typora="open -a typora"
 alias neofetch="neofetch --source /Users/jacksonchen/.config/neofetch/ascii/long_norm.txt"
 alias post="hexo new post"
+alias venv="/Users/jacksonchen/Library/Python/3.11/bin/virtualenv"
 alias lg="lazygit"
