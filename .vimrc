@@ -14,6 +14,8 @@ set number
 "vim plug
 call plug#begin()
 
+
+Plug 'sainnhe/everforest'
 "vim lsp
 Plug 'prabirshrestha/vim-lsp'
 "vim lsp seetings make easily setup lsp
@@ -29,4 +31,11 @@ call plug#end()
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-
+        if has('termguicolors')
+          set termguicolors
+        endif
+        set background=dark
+        let g:everforest_background = 'medium'
+        let g:everforest_better_performance = 1
+        colorscheme everforest
+ 
