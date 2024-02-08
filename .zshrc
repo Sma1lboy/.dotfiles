@@ -137,3 +137,4 @@ alias neofetch="neofetch --source /Users/jacksonchen/.config/neofetch/ascii/long
 alias post="hexo new post"
 alias venv="/Users/jacksonchen/Library/Python/3.11/bin/virtualenv"
 alias lg="lazygit"
+alias bc="better-commits"
