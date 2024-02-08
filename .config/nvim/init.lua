@@ -18,6 +18,13 @@ require("lazy").setup({
       "nvim-lua/plenary.nvim",
     },
   },
+  {
+    "numToStr/Comment.nvim",
+    opts = {
+      -- add any options here
+    },
+    lazy = false,
+  },
   "wakatime/vim-wakatime",
   "axelvc/template-string.nvim",
   "windwp/nvim-ts-autotag",
