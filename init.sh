@@ -3,7 +3,7 @@
 # call it in root dir
 
 
-CONFIG_DIR="~/.config"
+CONFIG_DIR="$HOME/.config"
 
 if ! [ -d $CONFIG_DIR ]; then
   mkdir CONFIG_DIR
