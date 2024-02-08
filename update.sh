@@ -4,11 +4,9 @@
 #update this folder
 
 DIR=$(realpath $(dirname $0))
+CONFIG=$DIR/.config
+if ! [ -d $CONFIG ]; then
+  mkdir $CONFIG
+fi
 cp -r ~/.config/nvim $DIR/.config/
 cp -r ~/.vim $DIR
-cp ~/.vimrc $DIR
-cp ~/.tmux.conf $DIR 
-cp ~/.tmux.conf.local $DIR
-cp ~/.gitconfig $DIR
-cp ~/.gitignore_global $DIR
-cp ~/.zshrc $DIR
