@@ -55,6 +55,7 @@ This directory contains my Neovim configuration files.
 ## .vim
 
 This is my easy Vim configuration directory. for sometime you cannot using nvim
+> Added more config to .vim config, it will update later
 
 ### Content
 
