@@ -1,8 +1,9 @@
+
 # Dotfiles Repository
 
 This repository contains my personal dotfiles for various tools I use in my development environment. Below you will find a brief overview of each configuration file and a space for custom command descriptions.
 
-Works for MacOS/Linux 💻
+Works for MacOS/Linux 💻 (no windows)
 
 # Installations
 
