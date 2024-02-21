@@ -7,6 +7,7 @@ require("nvim-treesitter.configs").setup({
     "html",
     "css",
     "json",
+    "c",
   },
   sync_install = false,
 
