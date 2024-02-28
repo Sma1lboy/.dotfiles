@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  "simrat39/symbols-outline.nvim",
+  "otavioschwanck/tmux-awesome-manager.nvim",
   {
     "NeogitOrg/neogit",
     dependencies = {
@@ -85,3 +87,5 @@ require("p-treesitter")
 require("p-neogit")
 require("lsp-sh")
 require("lsp-c")
+require("p-tmux-manager")
+require("p-symbols-outline")
