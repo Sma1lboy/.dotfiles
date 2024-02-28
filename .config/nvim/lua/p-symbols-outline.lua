@@ -1,7 +1,7 @@
 require("symbols-outline").setup({
   highlight_hovered_item = true,
   show_guides = true,
-  auto_preview = false,
+  auto_preview = true,
   position = "left",
   relative_width = true,
   width = 25,

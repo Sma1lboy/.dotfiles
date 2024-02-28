@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  "nguyenvukhang/nvim-toggler",
   "simrat39/symbols-outline.nvim",
   "otavioschwanck/tmux-awesome-manager.nvim",
   {
@@ -89,3 +90,4 @@ require("lsp-sh")
 require("lsp-c")
 require("p-tmux-manager")
 require("p-symbols-outline")
+require("p-nvim-toggler")
