@@ -14,9 +14,23 @@ require("tmux-awesome-manager").setup({
 })
 local tmux = require("tmux-awesome-manager")
 local tmux_term = require("tmux-awesome-manager.src.term")
-vim.keymap.set(
-  "n",
-  "rr",
-  tmux_term.run({ name = "Rails Console", name = "console", open_as = "pane" }),
-  {}
-) -- Send text to a open terminalr
+vim.keymap.set("n", "lf", function()
+  vim.cmd(":Telescope tmux-awesome-manager list_terms")
+end, {}) -- List all terminals
+
+tmux.run_wk({
+  cmd = "yarn add %1",
+  name = "Yarn Add",
+  questions = { { question = "package name: ", required = true } },
+})
+tmux.run_wk({
+  cmd = "npm add %1",
+  name = "Npm Add",
+  questions = { { question = "package name: ", required = true } },
+})
+
+tmux.run_wk({
+  cmd = "npm start",
+  name = "Npm Start",
+})
+tmux.run_wk({ name = "compile C" })
