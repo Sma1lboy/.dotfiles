@@ -12,6 +12,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   "nguyenvukhang/nvim-toggler",
   "simrat39/symbols-outline.nvim",
   "otavioschwanck/tmux-awesome-manager.nvim",
@@ -32,6 +42,7 @@ require("lazy").setup({
   "axelvc/template-string.nvim",
   "windwp/nvim-ts-autotag",
   "sainnhe/everforest",
+
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
@@ -71,7 +82,7 @@ require("lazy").setup({
   "nvim-treesitter/nvim-treesitter",
 })
 
-vim.cmd("colorscheme everforest")
+vim.cmd("colorscheme tokyonight")
 require("base")
 require("keymap")
 require("p-mason")
@@ -91,3 +102,4 @@ require("lsp-c")
 require("p-tmux-manager")
 require("p-symbols-outline")
 require("p-nvim-toggler")
+require("p-lualine")
