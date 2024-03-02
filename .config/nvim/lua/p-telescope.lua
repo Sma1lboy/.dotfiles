@@ -1,7 +1,13 @@
 local builtin = require("telescope.builtin")
 local keymap = vim.keymap
-keymap.set("n", "<leader>f", builtin.find_files, {})
-keymap.set("n", "<leader>g", builtin.live_grep, {})
+local wk = require("which-key")
+
+wk.register({
+  f = { builtin.find_files, "telescope fuzzy search" },
+  g = { builtin.live_grep, "telescope live grep" },
+}, { prefix = "<leader>" })
+--keymap.set("n", "<leader>f", builtin.find_files, {})
+--keymap.set("n", "<leader>g", builtin.live_grep, {})
 
 local actions = require("telescope.actions")
 require("telescope").setup({

@@ -7,13 +7,17 @@ require("telescope").load_extension("vim_bookmarks")
 
 local keymap = vim.keymap
 
-keymap.set(
-  "n",
-  "ma",
-  "<cmd>lua require('telescope').extensions.vim_bookmarks.all()<cr>"
-)
-keymap.set(
-  "n",
-  "mc",
-  "<cmd>lua require('telescope').extensions.vim_bookmarks.current_file()<cr>"
-)
+local wk = require("which-key")
+wk.register({
+  m = {
+    name = "bookmark telescope",
+    a = {
+      "<cmd>lua require('telescope').extensions.vim_bookmarks.all()<cr>",
+      "Show All Bookmarks",
+    },
+    c = {
+      "<cmd>lua require('telescope').extensions.vim_bookmarks.current_file()<cr>",
+      "Current File",
+    },
+  },
+})
