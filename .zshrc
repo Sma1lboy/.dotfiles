@@ -48,3 +48,4 @@ alias bc="better-commits"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH=/Users/jacksonchen/Documents/Github/depot_tools:$PATH
