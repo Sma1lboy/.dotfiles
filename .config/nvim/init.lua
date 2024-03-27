@@ -12,6 +12,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  { "folke/neodev.nvim", opts = {} },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+  },
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -112,3 +117,5 @@ require("p-tmux-manager")
 require("p-symbols-outline")
 require("p-nvim-toggler")
 require("p-lualine")
+require("p-neodev")
+require("p-dap")
