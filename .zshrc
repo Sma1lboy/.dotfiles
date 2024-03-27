@@ -49,3 +49,8 @@ alias bc="better-commits"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=/Users/jacksonchen/Documents/Github/depot_tools:$PATH
+
+# Created by `pipx` on 2024-03-25 03:20:42
+export PATH="$PATH:/Users/jacksonchen/.local/bin"
+
+export PATH="$PATH:/usr/local/texlive/2024/bin/universal-darwin"
