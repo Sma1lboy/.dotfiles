@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  "github/copilot.vim",
   { "folke/neodev.nvim", opts = {} },
   {
     "rcarriga/nvim-dap-ui",
@@ -96,7 +97,7 @@ require("lazy").setup({
   "nvim-treesitter/nvim-treesitter",
 })
 
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme everforest")
 require("base")
 require("keymap")
 require("p-mason")
