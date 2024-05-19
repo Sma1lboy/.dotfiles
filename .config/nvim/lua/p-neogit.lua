@@ -1,3 +1,4 @@
+-- @Deprated
 local ng = require("neogit")
 ng.setup()
 local keymap = vim.keymap

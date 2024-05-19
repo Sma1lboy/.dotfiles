@@ -14,6 +14,8 @@ require("tmux-awesome-manager").setup({
 })
 local tmux = require("tmux-awesome-manager")
 local tmux_term = require("tmux-awesome-manager.src.term")
+local wk = require("which-key")
+
 vim.keymap.set("n", "lf", function()
   vim.cmd(":Telescope tmux-awesome-manager list_terms")
 end, {}) -- List all terminals
@@ -34,3 +36,11 @@ tmux.run_wk({
   name = "Npm Start",
 })
 tmux.run_wk({ name = "compile C" })
+tmux.run_wk({
+  cmd = "yarn start",
+  name = "yarn start",
+})
+tmux.run_wk({
+  cmd = "yarn",
+  name = "yarn",
+})

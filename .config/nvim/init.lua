@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  { "akinsho/toggleterm.nvim", version = "*", config = true },
   "github/copilot.vim",
   { "folke/neodev.nvim", opts = {} },
   {
@@ -40,12 +41,6 @@ require("lazy").setup({
   "nguyenvukhang/nvim-toggler",
   "simrat39/symbols-outline.nvim",
   "otavioschwanck/tmux-awesome-manager.nvim",
-  {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-  },
   {
     "numToStr/Comment.nvim",
     opts = {
@@ -111,7 +106,6 @@ require("lsp-typescript")
 require("p-lint")
 require("p-cmp")
 require("p-treesitter")
-require("p-neogit")
 require("lsp-sh")
 require("lsp-c")
 require("p-tmux-manager")
@@ -120,3 +114,4 @@ require("p-nvim-toggler")
 require("p-lualine")
 require("p-neodev")
 require("p-dap")
+require("p-term")
