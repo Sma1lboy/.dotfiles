@@ -13,8 +13,6 @@ require("nvim-treesitter.configs").setup({
 
   auto_install = true,
 
-  ignore_install = { "javascript" },
-
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
@@ -26,7 +24,4 @@ require("nvim-treesitter.configs").setup({
 --- template string
 require("template-string").setup()
 --- fold
-local opt = vim.opt
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldenable = false
+--- @date 2024-05-19 update fold to using nvim-ufo

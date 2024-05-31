@@ -12,6 +12,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  --hex color render
+  "norcalli/nvim-colorizer.lua",
+  --color buddy
+  "tjdevries/colorbuddy.nvim",
+  "AndrewRadev/tagalong.vim",
+  "lewis6991/gitsigns.nvim",
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+  "kevinhwang91/promise-async",
+  "kevinhwang91/nvim-ufo",
   { "akinsho/toggleterm.nvim", version = "*", config = true },
   "github/copilot.vim",
   { "folke/neodev.nvim", opts = {} },
@@ -57,6 +69,7 @@ require("lazy").setup({
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
   "WhoIsSethDaniel/mason-tool-installer.nvim",
+  --- this is formatter
   {
     "stevearc/conform.nvim",
     opts = {},
@@ -70,7 +83,7 @@ require("lazy").setup({
   },
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.5",
+    tag = "0.1.6",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   "mg979/vim-visual-multi",
@@ -82,19 +95,26 @@ require("lazy").setup({
     opts = {},
   },
   "mfussenegger/nvim-lint",
+
+  { "hrsh7th/nvim-cmp", dependencies = { "mlaursen/vim-react-snippets" } },
+  -- auto completion from each lsp
   "hrsh7th/cmp-nvim-lsp",
+  -- auto completion of current buffer block
   "hrsh7th/cmp-buffer",
+  -- auto completion of file
   "hrsh7th/cmp-path",
+  -- lua api completion
+  "hrsh7th/cmp-nvim-lua",
   "hrsh7th/cmp-cmdline",
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-vsnip",
-  "hrsh7th/vim-vsnip",
+  "L3MON4D3/LuaSnip",
+  "saadparwaiz1/cmp_luasnip",
+
+  -- "hrsh7th/cmp-vsnip",
+  -- "hrsh7th/vim-vsnip",
   "nvim-treesitter/nvim-treesitter",
 })
 
 vim.cmd("colorscheme everforest")
-require("base")
-require("keymap")
 require("p-mason")
 require("p-lsp")
 require("lsp-lua")
@@ -115,3 +135,9 @@ require("p-lualine")
 require("p-neodev")
 require("p-dap")
 require("p-term")
+require("p-ufo")
+require("p-comment")
+require("p-gitsigns")
+require("base")
+require("keymap")
+require("p-colorizer")

@@ -14,7 +14,7 @@ wk.register({
   },
 }, { prefix = "<leader>" })
 wk.register({
-  n = {
+  D = {
     b = {
       "<Cmd>lua require('dap').toggle_breakpoint()<Cr>",
       "Toggle Breakpoints",
@@ -76,12 +76,9 @@ vim.fn.sign_define("DapLogPoint", {
   linehl = "DapLogPoint",
   numhl = "DapLogPoint",
 })
-vim.fn.sign_define(
-  "DapStopped",
-  {
-    text = "",
-    texthl = "DapStopped",
-    linehl = "DapStopped",
-    numhl = "DapStopped",
-  }
-)
+vim.fn.sign_define("DapStopped", {
+  text = "",
+  texthl = "DapStopped",
+  linehl = "DapStopped",
+  numhl = "DapStopped",
+})

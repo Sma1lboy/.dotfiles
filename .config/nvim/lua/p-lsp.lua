@@ -1,10 +1,5 @@
 local lspconfig = require("lspconfig")
-lspconfig.lua_ls.setup({})
-local keymap = vim.keymap
-
-keymap.set("n", "[d", vim.diagnostic.goto_prev)
-keymap.set("n", "]d", vim.diagnostic.goto_next)
-
+local wk = require("which-key")
 local builtin = require("telescope.builtin")
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -13,10 +8,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
     local opts = { buffer = ev.buf }
-    keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-    keymap.set("n", "<leader>k", vim.lsp.buf.definition, opts)
-    keymap.set("n", "<space>r", vim.lsp.buf.rename, opts)
-    keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-    keymap.set("n", "gr", builtin.lsp_references, opts)
+
+    wk.register({
+      ["gD"] = { builtin.lsp_definitions, "LSP Definitions" },
+      ["gr"] = { builtin.lsp_references, "LSP References" },
+      ["gI"] = { builtin.lsp_implementations, "LSP Implementations" },
+      ["gY"] = { builtin.lsp_type_definitions, "LSP Type Definitions" },
+      ["<space>r"] = { vim.lsp.buf.rename, "LSP Rename" },
+      ["<space>ca"] = { builtin.lsp_code_actions, "LSP Code Actions" },
+    }, { buffer = ev.buf })
   end,
 })

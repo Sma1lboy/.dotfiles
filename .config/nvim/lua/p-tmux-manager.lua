@@ -16,9 +16,15 @@ local tmux = require("tmux-awesome-manager")
 local tmux_term = require("tmux-awesome-manager.src.term")
 local wk = require("which-key")
 
-vim.keymap.set("n", "lf", function()
-  vim.cmd(":Telescope tmux-awesome-manager list_terms")
-end, {}) -- List all terminals
+wk.register({
+  q = {
+    name = "Tmux",
+    q = {
+      "<cmd>Telescope tmux-awesome-manager list_terms<CR>",
+      "list optional item",
+    },
+  },
+})
 
 tmux.run_wk({
   cmd = "yarn add %1",

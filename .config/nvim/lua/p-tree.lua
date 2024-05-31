@@ -17,6 +17,7 @@ local function my_on_attach(bufnr)
   end
   api.config.mappings.default_on_attach(bufnr)
   vim.keymap.set("n", "<C-e>", api.tree.toggle, opts("Toggle"))
+  vim.keymap.set("n", "<ESC>", api.tree.toggle, opts("Toggle"))
   vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
 end
 
@@ -46,3 +47,9 @@ require("nvim-tree").setup({
     },
   },
 })
+vim.cmd([[
+    :hi      NvimTreeExecFile    guifg=#ffa0a0
+    :hi      NvimTreeSpecialFile guifg=#ff80ff gui=underline
+    :hi      NvimTreeSymlink     guifg=Yellow  gui=italic
+    :hi link NvimTreeImageFile   Title
+]])
