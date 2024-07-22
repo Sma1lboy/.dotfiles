@@ -33,7 +33,6 @@ source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 bindkey '^ ' autosuggest-execute
-alias python="/usr/local/bin/python3"
 alias vim=/opt/homebrew/bin/nvim
 #export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -80,5 +79,10 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-18.0.2.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH
+export GOPATH=$HOME/go 
+export PATH=$PATH:$GOPATH/bin 
 
 
+
+
+conda config --set auto_activate_base false

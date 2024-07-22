@@ -27,6 +27,9 @@ require("telescope").setup({
     find_files = {
       hidden = true,
     },
+    colorscheme = {
+      enable_preview = true,
+    },
   },
   layout_config = {
     hotizontal = {

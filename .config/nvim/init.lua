@@ -12,6 +12,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  "Mofiqul/dracula.nvim",
+  -- adding github nvim theme
+  {
+    "projekt0n/github-nvim-theme",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("github-theme").setup({})
+    end,
+  },
   {
     "folke/trouble.nvim",
     opts = {}, -- for default options, refer to the configuration section for custom setup.
@@ -101,8 +111,7 @@ require("lazy").setup({
   "wakatime/vim-wakatime",
   "axelvc/template-string.nvim",
   "windwp/nvim-ts-autotag",
-  "sainnhe/everforest",
-
+  "neanias/everforest-nvim",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
@@ -152,7 +161,13 @@ require("lazy").setup({
   "nvim-treesitter/nvim-treesitter",
 })
 
-vim.cmd("colorscheme everforest")
+require("theme-dracula")
+-- colorscheme init
+vim.cmd("colorscheme dracula")
+
+require("base")
+require("keymap")
+
 require("p-mason")
 require("p-lsp")
 require("lsp-lua")
@@ -173,10 +188,9 @@ require("p-lualine")
 require("p-neodev")
 require("p-dap")
 require("p-term")
-require("p-ufo")
+-- require("p-ufo")
 require("p-comment")
 require("p-gitsigns")
-require("base")
-require("keymap")
 require("p-colorizer")
 require("trouble").setup()
+require("p-theme")
