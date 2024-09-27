@@ -1,3 +1,4 @@
+
 syntax on
 
 set ruler
@@ -40,6 +41,8 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'jiangmiao/auto-pairs'
 "c head and source change
 Plug 'vim-scripts/a.vim'
+Plug '~/.vim/plugged/vim-tabby'
+
 call plug#end()
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"

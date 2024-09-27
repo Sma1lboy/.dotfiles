@@ -23,3 +23,8 @@ vim.keymap.set("i", "<C-l>", 'copilot#Accept("\\<CR>")', {
   replace_keycodes = false,
 })
 vim.g.copilot_no_tab_map = true
+keymap.set("i", "<S-Tab>", "<C-d>")
+keymap.set("n", "<S-Tab>", "<<_")
+keymap.set("n", "<Tab>", ">>_")
+keymap.set("v", "<Tab>", ">gv")
+keymap.set("v", "<S-Tab>", "<gv")

@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  "mg979/vim-visual-multi",
   "Mofiqul/dracula.nvim",
   -- adding github nvim theme
   {

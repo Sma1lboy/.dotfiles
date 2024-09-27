@@ -20,6 +20,7 @@ plugins=(
 #  zsh_reload
   history
  # osx
+  rust
   )
 
 # bind key for zsh-autosuggestions confirm by using keymap ctrl-space
@@ -46,6 +47,8 @@ alias lg="lazygit"
 alias bc="better-commits"
 alias Github="cd /Users/jacksonchen/Documents/Github"
 alias yi="yarn install"
+alias a="yazi"
+alias sb="sketchybar"
 # bun completions
 [ -s "/Users/jacksonchen/.bun/_bun" ] && source "/Users/jacksonchen/.bun/_bun"
 
