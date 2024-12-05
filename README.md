@@ -1,3 +1,5 @@
+> [!WARNING]
+> This repo is refacotring right now, it will finishing soon
 
 # Dotfiles Repository
 
@@ -27,8 +29,6 @@ chmod +x ~/.dotfiles/tmux.sh
 
 > Therewill adding quick start for linux and macos, and it will support brewfile to install program if you dont have it
 
-
-
 ## .config/nvim
 
 This directory contains my Neovim configuration files.
@@ -40,12 +40,12 @@ This directory contains my Neovim configuration files.
 ### Feature plugin I like to using
 
 - template-string when using var, js string will change to template string with\`string ${var}\`
-- Wakatime - recording time 
+- Wakatime - recording time
 - ts autotag - it's for typescript
 - Ever forest - the theme I love so much
 - Mason - package management
 - Mason lspconfig - extension of Mason, adding lspconfig management
-- Nvim-lspconfig  - easily way management LSP
+- Nvim-lspconfig - easily way management LSP
 - Nvim-tree - tree stuck visualization
 - telescope - telescope search keyword under current dir, also support bookmark
 - Auto completion
@@ -56,6 +56,7 @@ This directory contains my Neovim configuration files.
 ## .vim
 
 This is my easy Vim configuration directory. for sometime you cannot using nvim
+
 > Added more config to .vim config, it will update later
 
 ### Content
@@ -72,7 +73,7 @@ I didn't change to much for my vim configuration, the main idea of my vim config
 - Auto completion with tab selection
 - Auto-Pairs
 
-When get into language, try  `:LspInstallServer` or check [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings) to get LSP service
+When get into language, try `:LspInstallServer` or check [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings) to get LSP service
 
 if you need linter or formatter, then add by yourself. I want to keep vim config clean, simple and easy to use.
 
@@ -108,7 +109,7 @@ Zsh with
 - Fast-syntax-highlight
 - Dirhistory- very important to me
 
-Also, 
+Also,
 
 - Vim alias to NVIM
 - typora alias to bin of typora
