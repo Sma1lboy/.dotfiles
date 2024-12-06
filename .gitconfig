@@ -1,6 +1,6 @@
 [user]
 	name = Jackson Chen
-	email = 90215880+Sma1lboy@users.noreply.github.com
+	email = 541898146chen@gmail.com
 [init]
   defaultBranch = main
 [core]
@@ -20,3 +20,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[http]
+	cookiefile = /Users/jacksonchen/.gitcookies

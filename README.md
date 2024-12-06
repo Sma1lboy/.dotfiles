@@ -1,5 +1,6 @@
 > [!WARNING]
 > This repo is refacotring right now, it will finishing soon
+> Not support for vim script for now
 
 # Dotfiles Repository
 
