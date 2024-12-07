@@ -66,8 +66,10 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig
 # Install libevent
 install_program libevent "$DOWNLOADER https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz | tar xzv && cd libevent-2.1.12-stable && ./configure && make && $(maybe_sudo)make install && $(maybe_sudo)ldconfig && cd .. && rm -rf libevent-2.1.12-stable"
 
-# Install other programs
 install_program git "$(maybe_sudo)apt-get install -y git"
 install_program neofetch "$DOWNLOADER https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch | $(maybe_sudo)tee /usr/local/bin/neofetch > /dev/null && $(maybe_sudo)chmod +x /usr/local/bin/neofetch"
 install_program node "$DOWNLOADER https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash && source ~/.nvm/nvm.sh && nvm install node"
-install_program nvim "$(maybe_sudo)apt-get install -y software-properties-common && $(maybe_sudo)add-apt-repository -y ppa:neovim-ppa/stable && $(maybe_sudo)apt-get update && $(maybe_sudo)apt-get install -y neovim"
+
+install_program snapd "$(maybe_sudo)apt-get update && $(maybe_sudo)apt-get install -y snapd"
+$(maybe_sudo)systemctl start snapd.socket snapd
+install_program nvim "$(maybe_sudo)snap install --classic nvim"
