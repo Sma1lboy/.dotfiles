@@ -10,22 +10,3 @@ require("toggleterm").setup({
   close_on_exit = true,
   shell = vim.o.shell,
 })
-
-local Terminal = require("toggleterm.terminal").Terminal
-local lazygit = Terminal:new({
-  cmd = "lazygit",
-  hidden = true,
-  direction = "float",
-  float_opts = { border = "curved", width = 120, height = 28, winblend = 3 },
-})
-
-function _lazygit_toggle()
-  lazygit:toggle()
-end
-
-vim.api.nvim_set_keymap(
-  "n",
-  ";;",
-  "<cmd>lua _lazygit_toggle()<CR>",
-  { noremap = true, silent = true }
-)

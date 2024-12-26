@@ -12,7 +12,80 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "echasnovski/mini.nvim",
+    },
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+  },
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    ---@type snacks.Config
+    opts = {
+      bigfile = { enabled = true },
+      dashboard = {
+        enabled = true,
+        preset = {
+          keys = {
+            { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+            { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+            { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+            { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+            { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+            { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+            { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+            { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+          },
+      reset= {
+          header = [[
+███████╗███╗   ███╗ █████╗ ██╗     ██╗     ██╗   ██╗██╗███╗   ███╗
+██╔════╝████╗ ████║██╔══██╗██║     ██║     ██║   ██║██║████╗ ████║
+███████╗██╔████╔██║███████║██║     ██║     ██║   ██║██║██╔████╔██║
+╚════██║██║╚██╔╝██║██╔══██║██║     ██║     ╚██╗ ██╔╝██║██║╚██╔╝██║
+███████║██║ ╚═╝ ██║██║  ██║███████╗███████╗ ╚████╔╝ ██║██║ ╚═╝ ██║
+╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝  ╚═══╝  ╚═╝╚═╝     ╚═╝]]
+        }
+
+      },
+      indent = { enabled = true },
+      input = { enabled = true },
+      notifier = { enabled = true },
+      quickfile = { enabled = true },
+      scroll = { enabled = true },
+      statuscolumn = { enabled = true },
+      words = { enabled = true },
+      lazygit = { enabled = true },
+      gitbrowse = { enabled = true },
+      zen = { enabled = true },
+    },
+    keys = {
+      {
+        ";;",
+        function()
+          Snacks.lazygit()
+        end,
+        desc = "Lazygit Open",
+      },
+    },
+  },
+  {
+    "sphamba/smear-cursor.nvim",
+
+    opts = {
+      smear_between_buffers = true,
+      smear_between_neighbor_lines = true,
+      scroll_buffer_space = true,
+      legacy_computing_symbols_support = false,
+    },
+  },
   "mg979/vim-visual-multi",
+
   "Mofiqul/dracula.nvim",
   -- adding github nvim theme
   {
@@ -74,7 +147,7 @@ require("lazy").setup({
   "kevinhwang91/nvim-ufo",
   { "akinsho/toggleterm.nvim", version = "*", config = true },
   "github/copilot.vim",
-  { "folke/neodev.nvim", opts = {} },
+  { "folke/neodev.nvim",       opts = {} },
   {
     "rcarriga/nvim-dap-ui",
     dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
