@@ -31,6 +31,10 @@ yabai -m config window_border_width          0
 yabai -m config window_opacity               on
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.9
+yabai -m config active_window_border_color   0xffC678DD    # 明亮紫色（激活窗口）
+
+yabai -m config normal_window_border_color  0xff9D7CD8    # 中等紫色（普通窗口）
+yabai -m config insert_feedback_color        0xff8B61FF    # 深紫色（拖动指示）
 
 # System app rules (unmanaged)
 yabai -m rule --add app="^System Settings$" manage=off
@@ -74,6 +78,6 @@ yabai -m signal --add event=window_title_changed action="sketchybar -m --trigger
 yabai -m config external_bar all:32:0
 
 # Borders setup
-borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=6.0 &
+borders active_color=0xff9D7CD8 inactive_color=0xff494d64 width=6.0 &
 
 echo "yabai configuration loaded.."
