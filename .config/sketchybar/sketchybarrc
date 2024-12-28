@@ -78,9 +78,6 @@ sketchybar --add event spotify_change $SPOTIFY_EVENT \
     script="$PLUGIN_DIR/spotify.sh" \
     --subscribe spotify spotify_change mouse.clicked
 
-
-
-
 # Clock Item
 sketchybar --add item clock right \
     --set clock \
@@ -130,4 +127,5 @@ sketchybar --add item slack right \
 # Finalizing Setup
 sketchybar --update
 sketchybar --trigger space_change
+
 

@@ -10,6 +10,79 @@ yabai -m config split_ratio                  0.5
 
 # General space settings
 yabai -m config layout                       bsp
+yabai -m config top_padding                  8 
+yabai -m config bottom_padding               5
+yabai -m config left_padding                 6
+yabai -m config right_padding                6
+yabai -m config window_gap                   6
+yabai -m config window_animation_duration    0.00
+yabai -m config auto_balance                 off
+
+# Mouse settings
+yabai -m config mouse_follows_focus          on
+yabai -m config mouse_modifier               alt 
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+yabai -m config mouse_drop_action            swap
+
+# Window appearance
+yabai -m config window_shadow                off
+yabai -m config window_border_width          0
+yabai -m config window_opacity               on
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        0.9
+yabai -m config active_window_border_color   0xffC678DD    # 明亮紫色（激活窗口）
+
+yabai -m config normal_window_border_color  0xff9D7CD8    # 中等紫色（普通窗口）
+yabai -m config insert_feedback_color        0xff8B61FF    # 深紫色（拖动指示）
+
+# System app rules (unmanaged)
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Calendar$" manage=off
+yabai -m rule --add app="^Console$" manage=off
+yabai -m rule --add app="^Digital Color Meter$" manage=off
+yabai -m rule --add app="^Disk Utility$" manage=off
+yabai -m rule --add app="^Font Book$" manage=off
+yabai -m rule --add app="^Image Capture$" manage=off
+yabai -m rule --add app="^Keychain Access$" manage=off
+yabai -m rule --add app="^Mission Control$" manage=off
+yabai -m rule --add app="^Preview$" manage=off
+yabai -m rule --add app="^Screenshot$" manage=off
+yabai -m rule --add app="^Time Machine$" manage=off
+yabai -m rule --add app="^Terminal$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^Archive Utility$" manage=off
+yabai -m rule --add app="^Installer$" manage=off
+yabai -m rule --add app="^Screen Sharing$" manage=off
+yabai -m rule --add app="^Software Update$" manage=off
+yabai -m rule --add app="^QuickTime Player$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Dictionary$" manage=off
+yabai -m rule --add app="^VoiceMemos$" manage=off
+yabai -m rule --add app="^Photo Booth$" manage=off
+yabai -m rule --add app="^Stickies$" manage=off
+yabai -m rule --add app="^Stats$" manage=off
+yabai -m rule --add app="^Steam$" manage=off
+yabai -m rule --add title="^Preferences$" manage=off
+yabai -m rule --add title="^Settings$" manage=off
+yabai -m rule --add title="^General$" manage=off
+
+#!/usr/bin/env sh
+
+# Restart Yabai scripting addition
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# Global settings
+yabai -m config window_placement             first_child 
+yabai -m config split_ratio                  0.5
+
+# General space settings
+yabai -m config layout                       bsp
 yabai -m config top_padding                  5 
 yabai -m config bottom_padding               5
 yabai -m config left_padding                 6
@@ -70,6 +143,17 @@ yabai -m rule --add app="^Steam$" manage=off
 yabai -m rule --add title="^Preferences$" manage=off
 yabai -m rule --add title="^Settings$" manage=off
 yabai -m rule --add title="^General$" manage=off
+
+# Sketchybar events
+yabai -m signal --add event=window_focused action="sketchybar -m --trigger window_focus &> /dev/null"
+yabai -m signal -add event=window_minimized action="sketchybar -m --trigger window_focus &> /dev/null"
+yabai -m signal --add event=window_title_changed action="sketchybar -m --trigger title_change &> /dev/null"
+yabai -m config external_bar all:32:0
+
+# Borders setup
+borders active_color=0xff9D7CD8 inactive_color=0xff494d64 width=6.0 &
+
+echo "yabai configuration loaded.."
 
 # Sketchybar events
 yabai -m signal --add event=window_focused action="sketchybar -m --trigger window_focus &> /dev/null"
