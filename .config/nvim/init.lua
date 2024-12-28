@@ -42,7 +42,6 @@ require("lazy").setup({
             { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
             { icon = " ", key = "q", desc = "Quit", action = ":qa" },
           },
-      reset= {
           header = [[
 ███████╗███╗   ███╗ █████╗ ██╗     ██╗     ██╗   ██╗██╗███╗   ███╗
 ██╔════╝████╗ ████║██╔══██╗██║     ██║     ██║   ██║██║████╗ ████║
