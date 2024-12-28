@@ -5,7 +5,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
 # Global settings
-yabai -m config window_placement             first_child 
+yabai -m config window_placement             second_child 
 yabai -m config split_ratio                  0.5
 
 # General space settings

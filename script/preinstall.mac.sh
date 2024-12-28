@@ -35,3 +35,4 @@ check_and_install gcc gcc
 check_and_install yabai koekeishiya/formulae/yabai
 check_and_install skhd koekeishiya/formulae/skhd
 check_and_install sketchybar sketchybar
+# install coreutils later for shuff program
