@@ -1,21 +1,26 @@
 #!/bin/bash
 
-FRONT_APP_SCRIPT='sketchybar --set $NAME label="$INFO"'
-
-
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
 front_app=(
-  script="$FRONT_APP_SCRIPT"
-  icon.drawing=off
-  padding_left=0
-  label.color=$WHITE
-  label.font="$FONT:Black:12.0"
+  script="$PLUGIN_DIR/front_app.sh"
+  icon.drawing=on
+  icon.font="$FONT:Bold:16.0"
+  icon.color=0xffcad3f5
+  icon.padding_left=10
+  icon.padding_right=5
+  label.color=0xffcad3f5
+  label.font="$FONT:Medium:13.0"
+  padding_left=5
+  padding_right=5
+  background.color=0x66494d64
+  background.corner_radius=8
+  background.height=26
+  background.drawing=on
   associated_display=active
+  updates=on
 )
 
-sketchybar --add event window_focus            \
-           --add event windows_on_spaces       \
-           --add item front_app left           \
-           --set front_app "${front_app[@]}"   \
-           --subscribe front_app front_app_switched
-
+sketchybar --add item front_app left \
+           --set front_app "${front_app[@]}" \
+           --subscribe front_app front_app_switched window_focus

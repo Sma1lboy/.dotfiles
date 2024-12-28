@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Color Palette
+export MAIN=0xff9D7CD8
 export BLACK=0xff181926
 export WHITE=0xffcad3f5
 export RED=0xffed8796

@@ -25,8 +25,6 @@ sketchybar --bar \
 
 # Default Settings
 sketchybar --default \
-    background.color=0x000 \
-    background.corner_radius=5 \
     background.padding_right=5 \
     background.height=26 \
     icon.font="$FONT:Medium:15.0" \
@@ -40,17 +38,10 @@ sketchybar --default \
 
 
 
-# here
+
 source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/front_app.sh"
-
-# here
-
-
-
-
-
 
 
 

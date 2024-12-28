@@ -1,12 +1,15 @@
 #!/bin/bash
 
 update() {
-  WIDTH="dynamic"
   if [ "$SELECTED" = "true" ]; then
-    WIDTH="0"
+    sketchybar --set $NAME \
+      background.color=0xff9D7CD8 \
+      icon.color=0xffffffff
+  else
+    sketchybar --set $NAME \
+      background.color=0x66494d64 \
+      icon.color=0xffcad3f5
   fi
-
-  sketchybar --animate tanh 20 --set $NAME icon.highlight=$SELECTED label.width=$WIDTH
 }
 
 mouse_clicked() {
