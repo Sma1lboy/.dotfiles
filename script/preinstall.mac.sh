@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Install Xcode Command Line Tools if not installed
+if ! xcode-select -p &> /dev/null; then
+  echo "Xcode Command Line Tools not installed. Installing..."
+  xcode-select --install
+  echo "Please wait for Xcode Command Line Tools installation to complete..."
+  echo "After installation completes, run this script again."
+  exit 0
+else
+  echo "Xcode Command Line Tools are already installed."
+fi
 
 check_and_install() {
   local program=$1
@@ -26,13 +36,39 @@ fi
 
 brew update
 
+# Install essential utilities
 check_and_install git git
 check_and_install tmux tmux
 check_and_install neofetch neofetch
 check_and_install node node
 check_and_install nvim neovim
 check_and_install gcc gcc
-check_and_install yabai koekeishiya/formulae/yabai
-check_and_install skhd koekeishiya/formulae/skhd
-check_and_install sketchybar sketchybar
-# install coreutils later for shuff program
+
+# Install coreutils for additional GNU utilities (includes shuf program)
+check_and_install gshuf coreutils
+
+# Install window management tools
+# check_and_install yabai koekeishiya/formulae/yabai
+# check_and_install skhd koekeishiya/formulae/skhd
+# check_and_install sketchybar sketchybar
+
+# Install Aerospace window manager
+if ! command -v aerospace &> /dev/null; then
+  echo "Aerospace is not installed. Installing..."
+  brew install --cask nikitabobko/tap/aerospace
+  echo "Aerospace installed successfully."
+else
+  echo "Aerospace is already installed."
+fi
+
+# Install additional tools
+check_and_install lazygit lazygit
+check_and_install fastfetch fastfetch
+
+# Install JankyBorders for window borders if needed
+if ! command -v borders &> /dev/null; then
+  echo "JankyBorders is not installed. Installing..."
+  brew install FelixKratz/formulae/borders
+else
+  echo "JankyBorders is already installed."
+fi

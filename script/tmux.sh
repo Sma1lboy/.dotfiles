@@ -6,13 +6,13 @@ TARGET_DIR="$HOME"
 FILES=(".tmux.conf" ".tmux.conf.local")
 
 for FILE in "${FILES[@]}"; do
-  if [ -e "$TARGET_DIR/$FILE" ]; then
+  if [ -L "$TARGET_DIR/$FILE" ] || [ -e "$TARGET_DIR/$FILE" ]; then
     echo "Removing existing $TARGET_DIR/$FILE"
     rm -f "$TARGET_DIR/$FILE"
   fi
 
-  echo "Copying $SOURCE_DIR/$FILE to $TARGET_DIR/$FILE"
-  cp "$SOURCE_DIR/$FILE" "$TARGET_DIR/$FILE"
+  echo "Creating symbolic link: $TARGET_DIR/$FILE -> $SOURCE_DIR/$FILE"
+  ln -s "$SOURCE_DIR/$FILE" "$TARGET_DIR/$FILE"
 done
 
-echo "All tmux configuration files copied."
+echo "All tmux configuration files linked."

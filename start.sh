@@ -26,18 +26,27 @@ echo "Executing nvim script..."
 echo "Executing tmux script..."
 "$SCRIPT_DIR/tmux.sh"
 
+echo "Installing ZSH plugins..."
+"$SCRIPT_DIR/zsh.sh"
+
 # macOS specific configurations
 if [ "$OS" = "Darwin" ]; then
     echo "Executing macOS specific configurations..."
     
-    echo "Executing yabai script..."
-    "$SCRIPT_DIR/yabai.sh"
+    # echo "Executing yabai script..."
+    # "$SCRIPT_DIR/yabai.sh"
 
-    echo "Executing skhd script..."
-    "$SCRIPT_DIR/skhd.sh"
+    # echo "Executing skhd script..."
+    # "$SCRIPT_DIR/skhd.sh"
 
-    echo "Executing sketchbar script..."
-    "$SCRIPT_DIR/sketchybar.sh"
+    # echo "Executing sketchbar script..."
+    # "$SCRIPT_DIR/sketchybar.sh"
+    
+    echo "Executing aerospace script..."
+    "$SCRIPT_DIR/aerospace.sh"
+    
+    echo "Executing fastfetch script..."
+    "$SCRIPT_DIR/fastfetch.sh"
 fi
 
 echo "All scripts executed."

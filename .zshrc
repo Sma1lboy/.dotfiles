@@ -9,7 +9,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
 
 plugins=(
-  fast-syntax-highlighting
   zsh-autosuggestions
   zsh-syntax-highlighting
   sudo
@@ -50,3 +49,8 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 # Add local bin to PATH
 export PATH="$PATH:$HOME/.local/bin"
+
+# Added by Windsurf
+export PATH="/Users/jacksonc/.codeium/windsurf/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"

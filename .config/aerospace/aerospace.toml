@@ -1,0 +1,151 @@
+# AeroSpace Configuration
+# Basic settings
+after-login-command = []
+after-startup-command = []
+start-at-login = true
+
+# Layout and normalization settings
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# Mouse settings - Enhanced for multi-monitor
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+automatically-unhide-macos-hidden-apps = false
+
+# Windows appearance
+[gaps]
+    inner.horizontal = 6
+    inner.vertical = 6
+    outer.left = 6
+    outer.bottom = 5
+    outer.top = 8
+    outer.right = 6
+
+[key-mapping]
+    preset = 'qwerty'
+
+# Monitor assignments - Flexible workspace assignment
+[workspace-to-monitor-force-assignment]
+# Main monitor exclusive workspaces
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+# Shared workspaces that can be used on either monitor
+5 = ['secondary', 'main']
+6 = ['secondary', 'main']
+7 = ['secondary', 'main']
+
+# Main mode bindings
+[mode.main.binding]
+    # Window focus
+    alt-h = 'focus left'
+    alt-j = 'focus down'
+    alt-k = 'focus up'
+    alt-l = 'focus right'
+
+    # Enhanced monitor focus controls
+    alt-s = 'focus-monitor left'
+    alt-d = 'focus-monitor right'
+    alt-shift-s = ['move-node-to-monitor left', 'focus-monitor left']
+    alt-shift-d = ['move-node-to-monitor right', 'focus-monitor right']
+
+    # Layout toggles
+    alt-t = ['layout floating tiling', 'mode main']
+    alt-f = 'layout floating tiling'
+    alt-shift-space = 'layout floating tiling'
+    
+    # Window states
+    alt-shift-m = 'fullscreen'
+    
+    # Layout switching
+    alt-slash = 'layout tiles horizontal vertical'
+    alt-comma = 'layout accordion horizontal vertical'
+    
+    # Resize windows
+    alt-equal = 'resize smart +50'
+    alt-minus = 'resize smart -50'
+    
+    # Window movement with focus follow
+    alt-shift-h = ['move left', 'focus left']
+    alt-shift-j = ['move down', 'focus down']
+    alt-shift-k = ['move up', 'focus up']
+    alt-shift-l = ['move right', 'focus right']
+    
+    # Workspace navigation
+    alt-tab = 'workspace-back-and-forth'
+    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+    
+    # Move to workspace
+    alt-shift-p = 'move-node-to-workspace prev'
+    alt-shift-n = 'move-node-to-workspace next'
+    alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
+    alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
+    alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
+    alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
+    alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
+    alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
+    alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
+    
+    # Workspace switching
+    alt-1 = 'workspace 1'
+    alt-2 = 'workspace 2'
+    alt-3 = 'workspace 3'
+    alt-4 = 'workspace 4'
+    alt-5 = 'workspace 5'
+    alt-6 = 'workspace 6'
+    alt-7 = 'workspace 7'
+    
+    # Additional ctrl shortcuts for workspace switching
+    ctrl-1 = 'workspace 1'
+    ctrl-2 = 'workspace 2'
+    ctrl-3 = 'workspace 3'
+    ctrl-4 = 'workspace 4'
+    ctrl-5 = 'workspace 5'
+    ctrl-6 = 'workspace 6'
+    ctrl-7 = 'workspace 7'
+
+# Service mode bindings
+[mode.service.binding]
+    esc = ['reload-config', 'mode main']
+    r = ['flatten-workspace-tree', 'mode main']
+    f = ['layout floating tiling', 'mode main']
+    backspace = ['close-all-windows-but-current', 'mode main']
+    alt-shift-h = ['join-with left', 'mode main']
+    alt-shift-j = ['join-with down', 'mode main']
+    alt-shift-k = ['join-with up', 'mode main']
+    alt-shift-l = ['join-with right', 'mode main']
+
+# PicGo specific rule
+[[on-window-detected]]
+if.app-id = 'com.molunerfinn.picgo'
+run = 'layout floating'
+check-further-callbacks = false
+
+# iPhone Mirroring specific rule
+[[on-window-detected]]
+if.app-name-regex-substring = '(?i).*iPhone Mirroring.*'
+run = 'layout floating'
+check-further-callbacks = false
+
+# Window detection and handling
+[[on-window-detected]]
+check-further-callbacks = true
+run = 'layout tiling'
+
+# System apps that should not be managed
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = '^(SideNotes)$'
+run = 'layout floating'
+check-further-callbacks = false
+
+[[on-window-detected]]
+if.app-name-regex-substring = '^(System Settings|System Information|Activity Monitor|Calculator|Calendar|Console|Digital Color Meter|Disk Utility|Font Book|Image Capture|Keychain Access|Mission Control|Preview|Screenshot|Time Machine|Terminal|App Store|Archive Utility|Installer|Screen Sharing|Software Update|QuickTime Player|Finder|Dictionary|VoiceMemos|Photo Booth|Stickies|Stats|Steam|SideNotes)$'
+run = 'layout floating'
