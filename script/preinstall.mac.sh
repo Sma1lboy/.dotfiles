@@ -51,6 +51,13 @@ check_and_install gshuf coreutils
 # check_and_install yabai koekeishiya/formulae/yabai
 # check_and_install skhd koekeishiya/formulae/skhd
 # check_and_install sketchybar sketchybar
+# Install JankyBorders for window borders if needed
+# if ! command -v borders &> /dev/null; then
+#   echo "JankyBorders is not installed. Installing..."
+#   brew install FelixKratz/formulae/borders
+# else
+#   echo "JankyBorders is already installed."
+# fi
 
 # Install Aerospace window manager
 if ! command -v aerospace &> /dev/null; then
@@ -65,10 +72,3 @@ fi
 check_and_install lazygit lazygit
 check_and_install fastfetch fastfetch
 
-# Install JankyBorders for window borders if needed
-if ! command -v borders &> /dev/null; then
-  echo "JankyBorders is not installed. Installing..."
-  brew install FelixKratz/formulae/borders
-else
-  echo "JankyBorders is already installed."
-fi

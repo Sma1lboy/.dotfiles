@@ -8,27 +8,63 @@ This repository contains my personal dotfiles for various tools I use in my deve
 
 Works for MacOS/Linux 💻 (no windows)
 
-# Installations
+# Quick Installation
 
-get into your root dir
+The installation process has been greatly simplified! Now you can set up everything with just one command:
 
 ```bash
-cd ~ && git clone https://github.com/Sma1lboy/.dotfiles.git
+# Clone the repository
+git clone https://github.com/Sma1lboy/dotfiles.git
+cd dotfiles
 
-//for nvim settings
-chmod +x ~/.dotfiles/nviminit.sh
-~/.dotfiles/nviminit.sh
+# Make the start script executable
+chmod +x start.sh
 
-//for vim settings
-chmod +x ~/.dotfiles/viminit.sh
-~/.dotfiles/viminit.sh
-
-//for tmux settings
-chmod +x ~/.dotfiles/tmux.sh
-~/.dotfiles/tmux.sh
+# Run the start script
+./start.sh
 ```
 
-> Therewill adding quick start for linux and macos, and it will support brewfile to install program if you dont have it
+The `start.sh` script will automatically:
+
+- Install required dependencies for your OS (macOS or Linux)
+- Set up Neovim, tmux, and other configurations
+- Install ZSH plugins
+- Configure window manager (Aerospace for macOS)
+- Create symbolic links for all configuration files
+
+> Note: For macOS users, it will install Homebrew packages including coreutils, lazygit, fastfetch, and window management tools.
+
+## Installing Dependencies Only
+
+If you only want to install the required dependencies without configuring dotfiles, you can use:
+
+```bash
+# Make the script executable
+chmod +x script/preinstall.sh
+
+# Run the preinstall script
+./script/preinstall.sh
+```
+
+### Currently Supported Software (macOS)
+
+The preinstall script will install the following tools for macOS:
+
+- Xcode Command Line Tools
+- Homebrew
+- git
+- tmux
+- neofetch
+- node
+- neovim
+- gcc
+- coreutils
+- lazygit
+- fastfetch
+- Aerospace window manager
+- JankyBorders
+
+> **Note**: Yabai, skhd, and sketchybar are currently disabled in the installation script as Yabai is not fully compatible with newer macOS versions. The project now uses Aerospace as the primary window manager instead.
 
 ## .config/nvim
 
@@ -36,7 +72,7 @@ This directory contains my Neovim configuration files.
 
 ### **Content**
 
-![Alt text](./readme/nvim.png)
+![alt text](./readme/image.png)
 
 ### Feature plugin I like to using
 
