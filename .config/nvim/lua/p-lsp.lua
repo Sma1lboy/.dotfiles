@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
       ["gI"] = { builtin.lsp_implementations, "LSP Implementations" },
       ["gY"] = { builtin.lsp_type_definitions, "LSP Type Definitions" },
       ["<space>r"] = { vim.lsp.buf.rename, "LSP Rename" },
-      ["<space>ca"] = { builtin.lsp_code_actions, "LSP Code Actions" },
+      ["<space>ca"] = { vim.lsp.buf.code_action, "LSP Code Actions" },
     }, { buffer = ev.buf })
   end,
 })

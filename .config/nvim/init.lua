@@ -11,6 +11,49 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Disable startup warnings and WakaTime messages
+local original_notify = vim.notify
+vim.notify = function(msg, level, opts)
+  -- Skip warning messages
+  if level == vim.log.levels.WARN then
+    return
+  end
+  -- Skip WakaTime version check messages
+  if type(msg) == "string" and msg:match("WakaTime") and msg:match("version") then
+    return
+  end
+  -- Let the original notify handle it (will be replaced by noice.nvim when loaded)
+  original_notify(msg, level, opts)
+end
+
+-- Override echo for WakaTime messages during startup
+vim.api.nvim_create_autocmd("VimEnter", {
+  once = true,
+  callback = function()
+    vim.defer_fn(function()
+      local original_echo = vim.api.nvim_echo
+      vim.api.nvim_echo = function(chunks, history, opts)
+        if type(chunks) == "table" and chunks[1] and type(chunks[1][1]) == "string" then
+          if chunks[1][1]:match("WakaTime.*Install") or chunks[1][1]:match("WakaTime.*version") then
+            return
+          end
+        end
+        return original_echo(chunks, history, opts)
+      end
+    end, 0)
+  end,
+})
+
+-- Disable diagnostics virtual text warnings
+vim.diagnostic.config({
+  virtual_text = {
+    severity = { min = vim.diagnostic.severity.ERROR }
+  },
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+})
+
 require("lazy").setup({
   -- {
   --   "MeanderingProgrammer/render-markdown.nvim",
@@ -92,7 +135,7 @@ require("lazy").setup({
       -- notifier = { enabled = true },
       quickfile = { enabled = true },
       scroll = { enabled = true },
-      statuscolumn = { enabled = true },
+      statuscolumn = { enabled = false },
       words = { enabled = true },
       lazygit = { enabled = true },
       gitbrowse = { enabled = true },
@@ -119,6 +162,8 @@ require("lazy").setup({
     },
   },
   "mg979/vim-visual-multi",
+
+  "echasnovski/mini.icons",
 
   "Mofiqul/dracula.nvim",
   -- adding github nvim theme
@@ -181,7 +226,7 @@ require("lazy").setup({
   "kevinhwang91/nvim-ufo",
   { "akinsho/toggleterm.nvim", version = "*", config = true },
   "github/copilot.vim",
-  { "folke/neodev.nvim", opts = {} },
+  { "folke/neodev.nvim",       opts = {} },
   {
     "rcarriga/nvim-dap-ui",
     dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
@@ -216,10 +261,34 @@ require("lazy").setup({
     },
     lazy = false,
   },
-  "wakatime/vim-wakatime",
+  {
+    "wakatime/vim-wakatime",
+    config = function()
+      -- Silence WakaTime startup messages
+      vim.g.wakatime_CLIPath = vim.fn.expand("~/.wakatime/wakatime-cli")
+      vim.cmd([[
+        silent! command! -nargs=0 WakaTimeCliVersion echo ""
+      ]])
+    end,
+  },
   "axelvc/template-string.nvim",
   -- "windwp/nvim-ts-autotag",
   "neanias/everforest-nvim",
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    },
+  },
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",

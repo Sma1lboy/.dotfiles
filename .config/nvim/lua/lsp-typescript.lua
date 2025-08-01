@@ -1,5 +1,3 @@
-require("typescript-tools").setup({})
-
 local wk = require("which-key")
 wk.register({
   ["<leader>"] = {
@@ -20,7 +18,7 @@ require("typescript-tools").setup({
   capabilities = cmp_capabilities,
 })
 --
-require("lspconfig").tsserver.setup({
+require("lspconfig").ts_ls.setup({
   capabilities = cmp_capabilities,
   on_attach = function(client)
     -- Disable rename
