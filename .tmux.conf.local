@@ -348,23 +348,69 @@ tmux_conf_copy_to_os_clipboard=false
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
 
-# increase history size
-#set -g history-limit 10000
+# -- agent-deck compatible settings --------------------------------------------
+# agent-deck-tmux-config-version: 3
+# agent-deck rebinds <prefix>+1-6 at runtime for session notification switching.
+# Alt+number bindings below provide conflict-free window access.
 
-# start with mouse mode enabled
+# terminal + true color
+set -g default-terminal "tmux-256color"
+set -ag terminal-overrides ",xterm*:Tc:smcup@:rmcup@"
+set -ag terminal-overrides ",*256col*:Tc"
+
+# extended keys for modified key sequences (tmux 3.2+)
+set -s extended-keys on
+set -as terminal-features 'tmux-256color:extkeys'
+
+# performance
+set -sg escape-time 0
+set -g history-limit 50000
+
+# mouse
 set -g mouse on
 
-# force Vi mode
-#   really you should export VISUAL or EDITOR environment variable, see manual
-#set -g status-keys vi
-#set -g mode-keys vi
+# auto-enter copy-mode on scroll up
+bind-key -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e'"
 
-# replace C-b by C-a instead of using both prefixes
-# set -gu prefix2
+# faster mouse scroll (10 lines per event)
+bind -T copy-mode WheelUpPane send-keys -X -N 10 scroll-up #!important
+bind -T copy-mode WheelDownPane send-keys -X -N 10 scroll-down #!important
+bind -T copy-mode-vi WheelUpPane send-keys -X -N 10 scroll-up #!important
+bind -T copy-mode-vi WheelDownPane send-keys -X -N 10 scroll-down #!important
+
+# clipboard: drag-to-copy (macOS)
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
+bind-key -T copy-mode MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
+
+# -- prefix: C-a ---------------------------------------------------------------
 unbind C-a
 unbind C-b
 set -g prefix C-a
 bind C-a send-prefix
+
+# -- window switching (agent-deck conflict-free) -------------------------------
+# Alt+number: always works, even when agent-deck rebinds <prefix>+1-6
+bind -n M-1 select-window -t :1 #!important
+bind -n M-2 select-window -t :2 #!important
+bind -n M-3 select-window -t :3 #!important
+bind -n M-4 select-window -t :4 #!important
+bind -n M-5 select-window -t :5 #!important
+bind -n M-6 select-window -t :6 #!important
+bind -n M-7 select-window -t :7 #!important
+bind -n M-8 select-window -t :8 #!important
+bind -n M-9 select-window -t :9 #!important
+
+# Alt+h/l: previous/next window (no prefix needed)
+bind -n M-h previous-window #!important
+bind -n M-l next-window #!important
+
+# Alt+Tab: last window (no prefix needed)
+bind -n M-Tab last-window #!important
+
+# -- session switching (agent-deck conflict-free) ------------------------------
+# Alt+( / Alt+): previous/next session
+bind -n M-( switch-client -p #!important
+bind -n M-) switch-client -n #!important
 
 # if you don't want Oh my tmux! to alter a binding, use #!important
 # bind c new-window -c '#{pane_current_path}' #!important

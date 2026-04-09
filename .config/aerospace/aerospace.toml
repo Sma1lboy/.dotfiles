@@ -17,12 +17,12 @@ automatically-unhide-macos-hidden-apps = false
 
 # Windows appearance
 [gaps]
-    inner.horizontal = 6
-    inner.vertical = 6
-    outer.left = 6
-    outer.bottom = 5
-    outer.top = 8
-    outer.right = 6
+    inner.horizontal = 1
+    inner.vertical = 1
+    outer.left = 1
+    outer.bottom = 1
+    outer.top = 1
+    outer.right = 1
 
 [key-mapping]
     preset = 'qwerty'
@@ -99,15 +99,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-6 = 'workspace 6'
     alt-7 = 'workspace 7'
     
-    # Additional ctrl shortcuts for workspace switching
-    ctrl-1 = 'workspace 1'
-    ctrl-2 = 'workspace 2'
-    ctrl-3 = 'workspace 3'
-    ctrl-4 = 'workspace 4'
-    ctrl-5 = 'workspace 5'
-    ctrl-6 = 'workspace 6'
-    ctrl-7 = 'workspace 7'
-
 # Service mode bindings
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
@@ -131,11 +122,43 @@ if.app-name-regex-substring = '(?i).*iPhone Mirroring.*'
 run = 'layout floating'
 check-further-callbacks = false
 
+# Typeless should stay floating
+[[on-window-detected]]
+if.app-name-regex-substring = '(?i).*Typeless.*'
+run = 'layout floating'
+check-further-callbacks = false
+
 # Window detection and handling
+[[on-window-detected]]
+if.app-name-regex-substring = '^(Lark)$'
+if.window-title-regex-substring = '^(Lark)$'
+run = 'layout tiling'
+check-further-callbacks = false
+
+[[on-window-detected]]
+if.app-name-regex-substring = '^(Lark)$'
+run = 'layout floating'
+check-further-callbacks = false
+
 [[on-window-detected]]
 check-further-callbacks = true
 run = 'layout tiling'
 
+# IntelliJ IDEA Settings/Preferences dialog should stay floating
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij'
+if.window-title-regex-substring = '(?i)(Settings|Preferences|New Project)'
+run = 'layout floating'
+check-further-callbacks = false
+
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij.ce'
+if.window-title-regex-substring = '(?i)(Settings|Preferences|New Project)'
+run = 'layout floating'
+check-further-callbacks = false
+
+ 
 # System apps that should not be managed
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
