@@ -162,6 +162,86 @@ require("lazy").setup({
     },
   },
   "mg979/vim-visual-multi",
+  {
+    "kawre/leetcode.nvim",
+    cmd = "Leet",
+    build = ":TSUpdate html",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    keys = {
+      {
+        "<leader>0",
+        "<cmd>Leet<cr>",
+        desc = "Open Leetcode",
+      },
+    },
+    config = function()
+      require("leetcode").setup({
+        arg = "leetcode.nvim",
+        lang = "java",
+        cn = {
+          enabled = false,
+          translator = true,
+          translate_problems = true,
+        },
+        storage = {
+          home = vim.fn.stdpath("data") .. "/leetcode",
+          cache = vim.fn.stdpath("cache") .. "/leetcode",
+        },
+        plugins = {
+          non_standalone = false,
+        },
+        logging = true,
+        injector = {},
+        cache = {
+          update_interval = 60 * 60 * 24 * 7,
+        },
+        editor = {
+          reset_previous_code = true,
+          fold_imports = true,
+        },
+        console = {
+          open_on_runcode = true,
+          dir = "row",
+          size = {
+            width = "90%",
+            height = "75%",
+          },
+          result = {
+            size = "60%",
+          },
+          testcase = {
+            virt_text = true,
+            size = "40%",
+          },
+        },
+        description = {
+          position = "left",
+          width = "40%",
+          show_stats = true,
+        },
+        picker = { provider = nil },
+        hooks = {
+          ["enter"] = {},
+          ["question_enter"] = {},
+          ["leave"] = {},
+        },
+        keys = {
+          toggle = { "q" },
+          confirm = { "<CR>" },
+          reset_testcases = "r",
+          use_testcase = "U",
+          focus_testcases = "H",
+          focus_result = "L",
+        },
+        theme = {},
+        image_support = false,
+      })
+    end,
+  },
 
   "echasnovski/mini.icons",
 
@@ -328,6 +408,12 @@ require("lazy").setup({
         submit = {
           normal = "<CR>", -- Enter in normal mode
           insert = "<CR>", -- Enter in insert mode
+        },
+        sidebar = {
+          close_from_input = {
+            normal = "<Esc>",
+            insert = "<Esc>",
+          },
         },
       },
     },

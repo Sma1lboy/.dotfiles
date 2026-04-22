@@ -52,5 +52,10 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # Added by Windsurf
 export PATH="/Users/jacksonc/.codeium/windsurf/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
+export PATH="$HOME/.ragdoll/bin:$PATH"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+ export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"

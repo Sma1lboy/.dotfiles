@@ -29,6 +29,9 @@ echo "Executing tmux script..."
 echo "Installing ZSH plugins..."
 "$SCRIPT_DIR/zsh.sh"
 
+echo "Executing ccstatusline script..."
+"$SCRIPT_DIR/ccstatusline.sh"
+
 # macOS specific configurations
 if [ "$OS" = "Darwin" ]; then
     echo "Executing macOS specific configurations..."
