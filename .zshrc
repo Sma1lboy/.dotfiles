@@ -1,35 +1,35 @@
-# If p10k-instant-prompt is available, source it
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# History
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=50000
+setopt SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_SPACE
 
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# Completion
+autoload -Uz compinit && compinit
 
-POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
-
-plugins=(
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  sudo
-  web-search
-  copypath
-  copyfile
-  copybuffer
-  dirhistory
-  virtualenv
-  history
-  rust
-)
-
-source $ZSH/oh-my-zsh.sh
-
-source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# zsh-autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Bind key for zsh-autosuggestions confirm by using keymap ctrl-space
 bindkey '^ ' autosuggest-execute
+
+# Starship prompt
+eval "$(starship init zsh)"
+
+# Starship preset switcher: `sp` to list, `sp <name>` to apply
+sp() {
+  local dir="$HOME/.config/starship-presets"
+  if [[ -z "$1" ]]; then
+    echo "presets in $dir:"
+    for f in "$dir"/*.toml; do echo "  ${${f:t}:r}"; done
+    return
+  fi
+  local target="$dir/$1.toml"
+  if [[ ! -f "$target" ]]; then
+    echo "no preset '$1' — run 'sp' to list"; return 1
+  fi
+  cp "$target" "$HOME/.config/starship.toml" && echo "applied '$1' — open a new shell or run 'exec zsh'"
+}
 
 # Aliases
 alias vim=/opt/homebrew/bin/nvim
@@ -59,3 +59,6 @@ export PATH="$JAVA_HOME/bin:$PATH"
  export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# zsh-syntax-highlighting (must be sourced last)
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
