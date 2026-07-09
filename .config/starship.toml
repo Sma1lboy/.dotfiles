@@ -1,3 +1,4 @@
+scan_timeout = 100
 # Community config by @RAIN-LOJK
 # Source: https://github.com/starship/starship/discussions/1107
 format = """

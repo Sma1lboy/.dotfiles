@@ -13,6 +13,15 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Bind key for zsh-autosuggestions confirm by using keymap ctrl-space
 bindkey '^ ' autosuggest-execute
 
+# Prefix history search with Up/Down arrows
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+bindkey '^[OA' up-line-or-beginning-search
+bindkey '^[OB' down-line-or-beginning-search
+
 # Starship prompt
 eval "$(starship init zsh)"
 
