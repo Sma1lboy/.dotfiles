@@ -111,15 +111,6 @@ exec-on-workspace-change = [
     alt-5 = 'workspace 5'
     alt-6 = 'workspace 6'
     alt-7 = 'workspace 7'
-    
-    # Additional ctrl shortcuts for workspace switching
-    ctrl-1 = 'workspace 1'
-    ctrl-2 = 'workspace 2'
-    ctrl-3 = 'workspace 3'
-    ctrl-4 = 'workspace 4'
-    ctrl-5 = 'workspace 5'
-    ctrl-6 = 'workspace 6'
-    ctrl-7 = 'workspace 7'
 
 # Service mode bindings
 [mode.service.binding]
@@ -135,6 +126,12 @@ exec-on-workspace-change = [
 # PicGo specific rule
 [[on-window-detected]]
 if.app-id = 'com.molunerfinn.picgo'
+run = 'layout floating'
+check-further-callbacks = false
+
+# Typeless specific rule
+[[on-window-detected]]
+if.app-id = 'now.typeless.desktop'
 run = 'layout floating'
 check-further-callbacks = false
 
