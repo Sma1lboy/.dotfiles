@@ -24,7 +24,7 @@ on-focus-changed = [
 exec-on-workspace-change = [
   '/bin/zsh',
   '-c',
-  '/usr/bin/osascript -e "tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-index-jsx\""',
+  '/usr/bin/osascript -e "tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-index-jsx\""; for w in $(aerospace list-windows --all --format "%{window-id} %{window-title}" | awk "/Picture in Picture/{print \$1}"); do aerospace move-node-to-workspace --window-id $w "$AEROSPACE_FOCUSED_WORKSPACE"; done',
 ]
 
 # Windows appearance
@@ -138,6 +138,12 @@ check-further-callbacks = false
 # iPhone Mirroring specific rule
 [[on-window-detected]]
 if.app-name-regex-substring = '(?i).*iPhone Mirroring.*'
+run = 'layout floating'
+check-further-callbacks = false
+
+# Chrome/Safari 画中画:浮动,并由 exec-on-workspace-change 跟随当前工作区
+[[on-window-detected]]
+if.window-title-regex-substring = '(?i)^picture in picture$'
 run = 'layout floating'
 check-further-callbacks = false
 
