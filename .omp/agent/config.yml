@@ -54,3 +54,7 @@ statusLine:
       showUnstaged: true
       showUntracked: true
 doubleEscapeAction: none
+memory:
+  backend: local
+autolearn:
+  enabled: true
