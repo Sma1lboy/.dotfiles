@@ -32,6 +32,9 @@ echo "Installing ZSH plugins..."
 echo "Executing ccstatusline script..."
 "$SCRIPT_DIR/ccstatusline.sh"
 
+echo "Executing omp script..."
+"$SCRIPT_DIR/omp.sh"
+
 # macOS specific configurations
 if [ "$OS" = "Darwin" ]; then
     echo "Executing macOS specific configurations..."

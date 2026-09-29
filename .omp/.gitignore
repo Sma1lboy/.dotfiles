@@ -1,0 +1,4 @@
+# omp writes these next to the symlinked config.yml
+*.lock
+*.bak-*
+*.broken-*

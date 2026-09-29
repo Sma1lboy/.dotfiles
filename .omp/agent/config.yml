@@ -1,0 +1,56 @@
+modelRoles:
+  default: anthropic/claude-opus-5-5
+  slow: anthropic/claude-fable-5-1
+  advisor: anthropic/claude-fable-5-1
+  consult: anthropic/claude-opus-5-5
+  plan: openai-codex/gpt-6-astra
+  smol: openai-codex/gpt-6-sol
+  task: anthropic/claude-sonnet-5-5
+  tiny: openai-codex/gpt-6-luna
+symbolPreset: nerd
+composer:
+  shape: claude
+theme:
+  dark: titanium
+  light: light
+setupVersion: 2
+hideThinkingBlock: true
+display:
+  hideToolActivity: false
+tools:
+  intentTracing: true
+enabledProviders:
+  - claude
+commands:
+  enableClaudeUser: true
+startup:
+  quiet: false
+statusLine:
+  preset: custom
+  leftSegments:
+    - pi
+    - vim
+    - model
+    - mode
+    - collab
+    - stream
+    - path
+    - git
+    - pr
+    - cost
+  rightSegments:
+    - session_name
+  separator: powerline-thin
+  segmentOptions:
+    model:
+      showThinkingLevel: true
+    path:
+      abbreviate: true
+      maxLength: 40
+      stripWorkPrefix: true
+    git:
+      showBranch: true
+      showStaged: true
+      showUnstaged: true
+      showUntracked: true
+doubleEscapeAction: none
