@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "lines": [
     [
       {
@@ -41,16 +41,57 @@
         "id": "7",
         "type": "git-changes",
         "color": "yellow"
+      },
+      {
+        "id": "m1",
+        "type": "separator"
+      },
+      {
+        "id": "m-cost",
+        "type": "session-cost",
+        "color": "green"
+      },
+      {
+        "id": "m2",
+        "type": "separator"
+      },
+      {
+        "id": "m-cache",
+        "type": "cache-timer",
+        "color": "brightCyan"
+      },
+      {
+        "id": "m3",
+        "type": "separator"
+      },
+      {
+        "id": "m-hit",
+        "type": "cache-hit-rate",
+        "color": "green"
+      },
+      {
+        "id": "m4",
+        "type": "separator"
+      },
+      {
+        "id": "m-miss",
+        "type": "cache-miss-reason",
+        "color": "yellow"
       }
     ],
+    [],
     [],
     []
   ],
   "flexMode": "full-minus-40",
   "compactThreshold": 60,
   "colorLevel": 2,
+  "defaultPaddingSide": "both",
   "inheritSeparatorColors": false,
   "globalBold": false,
+  "gitCacheTtlSeconds": 5,
+  "terminalWidthCacheTtlSeconds": 5,
+  "customCommandCacheTtlSeconds": 0,
   "minimalistMode": false,
   "powerline": {
     "enabled": false,
