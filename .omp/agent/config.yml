@@ -11,7 +11,7 @@ symbolPreset: nerd
 composer:
   shape: claude
 theme:
-  dark: titanium
+  dark: titanium-custom
   light: light
 setupVersion: 2
 hideThinkingBlock: true

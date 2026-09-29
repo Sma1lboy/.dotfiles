@@ -1,5 +1,5 @@
 #!/bin/bash
-# omp (oh-my-pi): link config + own extensions, copy mcp.json, install plugins.
+# omp (oh-my-pi): link config + own extensions + custom themes, copy mcp.json, install plugins.
 
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/.omp"
 TARGET_DIR="$HOME/.omp/agent"
@@ -7,7 +7,7 @@ TARGET_DIR="$HOME/.omp/agent"
 mkdir -p "$TARGET_DIR"
 
 # omp writes config.yml through symlinks (resolves realpath first), so linking is safe.
-for item in config.yml extensions; do
+for item in config.yml extensions themes; do
   target="$TARGET_DIR/$item"
   if [ -L "$target" ]; then
     rm "$target"
