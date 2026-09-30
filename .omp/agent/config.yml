@@ -62,3 +62,4 @@ autolearn:
   enabled: true
 dev:
   autoqaConsent: granted
+defaultThinkingLevel: medium
