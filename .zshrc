@@ -154,3 +154,9 @@ export BYTEDCLI_NO_AUTO_UPGRADE=1
 
 # machine-local secrets & overrides (not tracked in dotfiles)
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# rove scrubs the outer terminal's identity from panes; force omp's Kitty placeholder images and
+# file links there (~/.omp/agent/extensions/rove-graphics.ts forwards the image data to Ghostty).
+if [ -n "$ROVE_TAB_ID" ]; then
+  export PI_FORCE_IMAGE_PROTOCOL=kitty PI_KITTY_PLACEHOLDERS=1 PI_FORCE_HYPERLINKS=1
+fi

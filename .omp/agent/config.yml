@@ -1,5 +1,4 @@
 modelRoles:
-  default: anthropic/claude-opus-5-5
   slow: anthropic/claude-fable-5-1
   advisor: anthropic/claude-fable-5-1
   consult: anthropic/claude-opus-5-5
@@ -7,6 +6,7 @@ modelRoles:
   smol: openai-codex/gpt-6-sol
   task: anthropic/claude-sonnet-5-5
   tiny: openai-codex/gpt-6-luna
+  default: anthropic/claude-opus-5-5
 symbolPreset: nerd
 composer:
   shape: claude
@@ -19,6 +19,8 @@ display:
   hideToolActivity: false
 tools:
   intentTracing: true
+todo:
+  enabled: false
 enabledProviders:
   - claude
 commands:
@@ -58,3 +60,5 @@ memory:
   backend: local
 autolearn:
   enabled: true
+dev:
+  autoqaConsent: granted

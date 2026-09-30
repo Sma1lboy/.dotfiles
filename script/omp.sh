@@ -32,7 +32,8 @@ fi
 
 while read -r plugin; do
   case "$plugin" in "" | \#*) continue ;; esac
-  omp plugin install "$plugin"
+  # Public registry: mirrors 404 on pi peer deps such as @earendil-works/pi-coding-agent.
+  NPM_CONFIG_REGISTRY=https://registry.npmjs.org BUN_CONFIG_REGISTRY=https://registry.npmjs.org omp plugin install "$plugin"
 done <"$SOURCE_DIR/plugins.txt"
 
 if ! omp plugin list 2>/dev/null | grep -q 'i-have-adhd@i-have-adhd'; then

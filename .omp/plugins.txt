@@ -2,3 +2,4 @@
 better-pi-rewind
 omp-markdown-export
 omp-plugin-duplicate-detector
+@ladbabynpm/picc-tasks

@@ -405,7 +405,7 @@ function renderRow(
 	const earlier = card === run[run.length - 1] ? earlierSummary(run, card) : undefined;
 	const detailText = detail ? theme.fg("muted", ` ${detail}`) : "";
 	const earlierText = earlier ? theme.fg("dim", ` · earlier: ${earlier}`) : "";
-	return [truncateToWidth(`${icon} ${theme.fg("toolTitle", theme.bold(label))}${detailText}${earlierText}`, width)];
+	return [truncateToWidth(` ${icon} ${theme.fg("toolTitle", theme.bold(label))}${detailText}${earlierText}`, width)];
 }
 
 function candidatesAtRow(state: FoldState, row: number): string[] {

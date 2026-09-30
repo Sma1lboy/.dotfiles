@@ -1,6 +1,6 @@
-// usageline for omp: a line under the editor with the prompt cache's time left,
-// the last run's cache hit rate, why a request rewrote the cache, and what this
-// project has cost today across every session; /usageline prints the ledger.
+// usageline for omp: a line under the editor with the context size, output speed, the prompt
+// cache's time left, the last run's cache hit rate, why a request rewrote the cache, and what
+// this project has cost today across every session; /usageline prints the ledger.
 // Port of the claude-mods usageline mod (~/i/claude-mods/usageline).
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
@@ -58,6 +58,8 @@ export default function usageline(pi: ExtensionAPI) {
 	let miss: { reason: string; written: number } | null = null;
 	/** This project's spend in today's day file, read incrementally from `offset`. */
 	let today = { day: "", offset: 0, usd: 0 };
+	/** Main-branch output tokens and request time, for ccstatusline's session-wide output-speed. */
+	let speed = { out: 0, ms: 0 };
 	let reading = false;
 	let ticks = 0;
 	let drawn = "";
@@ -179,6 +181,18 @@ export default function usageline(pi: ExtensionAPI) {
 		return n >= 999_950 ? `${(n / 1e6).toFixed(1)}M` : n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n);
 	}
 
+	function speedOf(ctx: ExtensionContext): { out: number; ms: number } {
+		const acc = { out: 0, ms: 0 };
+		for (const entry of ctx.sessionManager.getBranch()) {
+			if (entry.type !== "message" || entry.message.role !== "assistant") continue;
+			const { usage, duration } = entry.message;
+			if (!usage || !duration || duration <= 0) continue;
+			acc.out += usage.output;
+			acc.ms += duration;
+		}
+		return acc;
+	}
+
 	function lineOf(ctx: ExtensionContext): string {
 		const th = ctx.ui.theme;
 		const parts: string[] = [];
@@ -186,6 +200,10 @@ export default function usageline(pi: ExtensionAPI) {
 		// ccstatusline's context-length widget: the last request's prompt size, gray, one decimal on k/M.
 		const ctxTokens = ctx.getContextUsage()?.tokens;
 		if (typeof ctxTokens === "number" && ctxTokens > 0) parts.push(th.fg("dim", `Ctx: ${fmtCtxTokens(ctxTokens)}`));
+		if (speed.ms > 0 && speed.out > 0) {
+			const tps = (speed.out * 1000) / speed.ms;
+			parts.push(th.fg("accent", `Out: ${tps >= 1000 ? `${(tps / 1000).toFixed(1)}k` : tps.toFixed(1)} t/s`));
+		}
 		if (working) parts.push(`${th.fg("dim", "cache")} ${th.fg("success", "live")}`);
 		else if (lastTouchMs !== null && ttl !== undefined) {
 			const left = ttl - (Date.now() - lastTouchMs);
@@ -264,6 +282,7 @@ export default function usageline(pi: ExtensionAPI) {
 		model = ctx.model?.id ?? "";
 		requestStartMs = null;
 		restore(ctx);
+		speed = speedOf(ctx);
 		miss = null;
 		await readToday();
 		draw(ctx);
@@ -292,7 +311,9 @@ export default function usageline(pi: ExtensionAPI) {
 	});
 
 	pi.on("session_branch", async (_event, ctx) => {
-		if (ctx.agent.kind === "main") rebaseline(ctx);
+		if (ctx.agent.kind !== "main") return;
+		rebaseline(ctx);
+		speed = speedOf(ctx);
 	});
 
 	pi.on("agent_start", async (_event, ctx) => {
@@ -312,6 +333,10 @@ export default function usageline(pi: ExtensionAPI) {
 		if (ctx.agent.kind !== "main") return;
 		const msg = event.message;
 		if (msg.role !== "assistant" || !msg.usage) return;
+		if (msg.duration && msg.duration > 0) {
+			speed.out += msg.usage.output;
+			speed.ms += msg.duration;
+		}
 		live = ctx;
 		const u = msg.usage;
 		if (u.input + u.cacheRead + u.cacheWrite === 0) return;
