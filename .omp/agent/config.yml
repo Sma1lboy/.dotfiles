@@ -60,16 +60,9 @@ memory:
   backend: local
 autolearn:
   enabled: true
-<<<<<<< Updated upstream
-dev:
-  autoqaConsent: granted
-defaultThinkingLevel: medium
-extendedContext: true
-=======
 claudeResets:
   autoRedeem: "no"
 dev:
   autoqaConsent: granted
 extendedContext: true
 defaultThinkingLevel: medium
->>>>>>> Stashed changes
