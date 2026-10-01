@@ -4,7 +4,9 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 local api = require("nvim-tree.api")
-vim.keymap.set("n", "<c-e>", api.tree.toggle)
+-- Looked up on each press: functions taken from the api before setup() are
+-- placeholders that only report "setup not called".
+vim.keymap.set("n", "<c-e>", function() api.tree.toggle() end)
 local function my_on_attach(bufnr)
   local function opts(desc)
     return {
@@ -39,12 +41,6 @@ require("nvim-tree").setup({
   diagnostics = {
     enable = true,
     show_on_dirs = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
   },
 })
 vim.cmd([[

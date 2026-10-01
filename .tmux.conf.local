@@ -259,13 +259,14 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{username_ssh}
 tmux_conf_theme_status_left=" ❐ #S "
 tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R | username: #{username}#{root} | hostname: #{hostname} "
-# status left style
-tmux_conf_theme_status_left_fg="#{?#{==:#{tmux_conf_theme_style},light},black,white}"
+# status left style (a single colour: oh-my-tmux splits these on commas, one
+# per status segment, so a #{?…,…,…} conditional here is cut into pieces)
+tmux_conf_theme_status_left_fg="default"
 tmux_conf_theme_status_left_bg="default"
 tmux_conf_theme_status_left_attr="bold"
 
 # status right style
-tmux_conf_theme_status_right_fg="#{?#{==:#{tmux_conf_theme_style},light},black,white}"
+tmux_conf_theme_status_right_fg="default"
 tmux_conf_theme_status_right_bg="default"
 tmux_conf_theme_status_right_attr="none"
 

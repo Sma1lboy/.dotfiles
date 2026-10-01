@@ -22,6 +22,6 @@ require("lspconfig").ts_ls.setup({
   capabilities = cmp_capabilities,
   on_attach = function(client)
     -- Disable rename
-    client.resolved_capabilities.rename = false
+    client.server_capabilities.renameProvider = false
   end,
 })
