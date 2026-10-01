@@ -63,3 +63,4 @@ autolearn:
 dev:
   autoqaConsent: granted
 defaultThinkingLevel: medium
+extendedContext: true
