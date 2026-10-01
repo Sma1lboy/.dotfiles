@@ -72,7 +72,7 @@ This directory contains my Neovim configuration files.
 
 ### **Content**
 
-![alt text](./readme/image.png)
+![Neovim: nvim-tree, Telescope, LSP completion](./readme/nvim.gif)
 
 ### Feature plugin I like to using
 
@@ -98,7 +98,7 @@ This is my easy Vim configuration directory. for sometime you cannot using nvim
 
 ### Content
 
-![image-20240130005457499](./readme/image-20240130005457499.png)
+![Vim: everforest, airline, relative numbers, auto-pairs](./readme/vim.gif)
 
 ### The feature I like
 
@@ -124,7 +124,7 @@ This file holds my local tmux configuration overrides.
 
 ### Content
 
-![image-20240130010129554](./readme/image-20240130010129554.png)
+![tmux: C-a prefix splits, zoom, windows, status bar](./readme/tmux.gif)
 
 Not fancy, keep simple, only showing the data you really need.
 
@@ -136,7 +136,7 @@ My Zsh shell configuration is defined in this file.
 
 ## Content
 
-![image-20240130010323289](./readme/image-20240130010323289.png)
+![zsh + starship: autosuggestion, highlighting, prefix history search](./readme/zsh.gif)
 
 Zsh with
 
@@ -151,3 +151,20 @@ Also,
 - Vim alias to NVIM
 - typora alias to bin of typora
 - lg alias to lazygit
+
+## README recordings
+
+The gifs above are recordings of these configs, not screenshots. Each one is
+a scripted take in `readme/rec/scenes/`, recorded once into
+`readme/casts/<scene>.cast` (asciicast) and rendered from that file, so
+pacing and look change without re-recording.
+
+```bash
+brew install asciinema agg
+readme/rec/record.sh nvim      # re-take one scene against this machine's configs
+readme/rec/render.sh           # every cast -> readme/<scene>.gif
+```
+
+A take runs on its own tmux socket in a throwaway repo under `/tmp`, and is
+refused if the recording still shows your user name, host name, home path or
+an e-mail address after the same-length swap to `orbitdev`.
