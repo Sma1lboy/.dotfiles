@@ -26,8 +26,8 @@ recording of these exact configs ([how](#readme-recordings)).
 ## Install
 
 ```bash
-git clone https://github.com/Sma1lboy/dotfiles.git
-cd dotfiles
+git clone https://github.com/Sma1lboy/.dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 ./start.sh
 ```
 
@@ -150,7 +150,7 @@ and points git hooks at `.githooks` so every `git pull` re-syncs plugins.
 
 ![omp: one turn with the custom status line and extensions](./readme/omp.gif)
 
-- **Model roles** (`config.yml`): Opus for default work, Sonnet for subagents, a stronger model as advisor, GPT models for plan / smol / tiny.
+- **Model roles** (`config.yml`): Opus for default work, Sonnet for subagents, a stronger model as advisor, GPT models for plan / smol / tiny. A daily cloud routine ([`.omp/model-watch/ROUTINE.md`](.omp/model-watch/ROUTINE.md)) bumps them to the newest model of each family on `main`, and the `omp` shell function pulls them in (`.omp/sync-model-roles.sh`) before every launch.
 - **Status line:** model and thinking level, path, git state, PR, cost, session name; titanium-custom theme.
 
 Extensions in `.omp/agent/extensions`:
