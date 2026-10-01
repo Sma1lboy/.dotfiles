@@ -109,12 +109,21 @@ function previewsOf(bubble: object, source: readonly string[]): Preview[] {
 			if (seen.has(path)) continue;
 			seen.add(path);
 			// Skill chips link SKILL.md; only files with an image header become previews.
-			const meta = readImageMetadataSync(path);
-			if (!meta?.width || !meta.height) continue;
+			// Pasted screenshots often live in temp dirs that get purged, so a missing file is skipped.
+			let widthPx: number | undefined;
+			let heightPx: number | undefined;
+			try {
+				const meta = readImageMetadataSync(path);
+				widthPx = meta?.width;
+				heightPx = meta?.height;
+			} catch {
+				continue;
+			}
+			if (!widthPx || !heightPx) continue;
 			list.push({
 				path,
-				widthPx: meta.width,
-				heightPx: meta.height,
+				widthPx,
+				heightPx,
 				options: {
 					maxWidthCells: resolved.maxWidthCells,
 					maxHeightCells: Math.min(PREVIEW_MAX_ROWS, resolved.maxHeightCells ?? PREVIEW_MAX_ROWS),
