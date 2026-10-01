@@ -3,7 +3,7 @@ modelRoles:
   advisor: anthropic/claude-fable-5-1
   consult: anthropic/claude-opus-5-5
   plan: openai-codex/gpt-6-astra
-  smol: openai-codex/gpt-6-sol
+  smol: openai-codex/gpt-6.1-sol
   task: anthropic/claude-sonnet-5-5
   tiny: openai-codex/gpt-6-luna
   default: anthropic/claude-opus-5-5
