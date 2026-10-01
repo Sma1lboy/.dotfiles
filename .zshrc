@@ -160,3 +160,9 @@ export BYTEDCLI_NO_AUTO_UPGRADE=1
 if [ -n "$ROVE_TAB_ID" ]; then
   export PI_FORCE_IMAGE_PROTOCOL=kitty PI_KITTY_PLACEHOLDERS=1 PI_FORCE_HYPERLINKS=1
 fi
+
+# modelRoles are bumped by the cloud "omp model-watch" routine; pull them in before each launch.
+omp() {
+  ~/.dotfiles/.omp/sync-model-roles.sh
+  command omp "$@"
+}
