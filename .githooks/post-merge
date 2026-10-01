@@ -1,0 +1,3 @@
+#!/bin/sh
+# git pull (fast-forward / merge): sync omp plugins from .omp/plugins.txt.
+exec "$(git rev-parse --show-toplevel)/script/omp-plugins.sh"

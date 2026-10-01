@@ -1,5 +1,6 @@
 #!/bin/bash
-# omp (oh-my-pi): link config + own extensions + custom themes, copy mcp.json, install plugins.
+# omp (oh-my-pi): link config + own extensions + custom themes, copy mcp.json, install plugins,
+# and enable .githooks so every dotfiles pull re-syncs plugins.
 
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/.omp"
 TARGET_DIR="$HOME/.omp/agent"
@@ -25,16 +26,15 @@ if [ ! -e "$TARGET_DIR/mcp.json" ]; then
   echo "Copied mcp.json to $TARGET_DIR"
 fi
 
+# Every later `git pull` re-runs omp-plugins.sh through these hooks.
+git -C "$SOURCE_DIR/.." config core.hooksPath .githooks
+
 if ! command -v omp >/dev/null 2>&1; then
   echo "omp not installed, skipping plugin install"
   exit 0
 fi
 
-while read -r plugin; do
-  case "$plugin" in "" | \#*) continue ;; esac
-  # Public registry: mirrors 404 on pi peer deps such as @earendil-works/pi-coding-agent.
-  NPM_CONFIG_REGISTRY=https://registry.npmjs.org BUN_CONFIG_REGISTRY=https://registry.npmjs.org omp plugin install "$plugin"
-done <"$SOURCE_DIR/plugins.txt"
+"$SOURCE_DIR/../script/omp-plugins.sh"
 
 if ! omp plugin list 2>/dev/null | grep -q 'i-have-adhd@i-have-adhd'; then
   omp plugin marketplace list 2>/dev/null | grep -q 'i-have-adhd' || omp plugin marketplace add ayghri/i-have-adhd

@@ -1,0 +1,4 @@
+#!/bin/sh
+# git pull --rebase with local commits fires post-rewrite instead of post-merge.
+[ "$1" = rebase ] || exit 0
+exec "$(git rev-parse --show-toplevel)/script/omp-plugins.sh"
