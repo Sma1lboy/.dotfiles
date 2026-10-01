@@ -15,6 +15,5 @@ require("mason-tool-installer").setup({
     "lua-language-server",
     "stylua",
     "eslint_d",
-    "typescript-language-server",
   },
 })

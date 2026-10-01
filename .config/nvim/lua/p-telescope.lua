@@ -11,7 +11,7 @@ require("telescope").setup({
   defaults = {
     mappings = {
       i = {
-        ["esc"] = actions.close,
+        ["<esc>"] = actions.close,
       },
     },
     file_ignore_patterns = {

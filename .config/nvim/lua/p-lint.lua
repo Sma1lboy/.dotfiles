@@ -7,6 +7,7 @@ require("lint").linters_by_ft = {
 }
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
-    require("lint").try_lint()
+    -- A project without eslint installed is not an error worth a popup.
+    require("lint").try_lint(nil, { ignore_errors = true })
   end,
 })

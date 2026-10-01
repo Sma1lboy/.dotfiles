@@ -17,11 +17,3 @@ require("typescript-tools").setup({
 
   capabilities = cmp_capabilities,
 })
---
-require("lspconfig").ts_ls.setup({
-  capabilities = cmp_capabilities,
-  on_attach = function(client)
-    -- Disable rename
-    client.server_capabilities.renameProvider = false
-  end,
-})

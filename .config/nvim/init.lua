@@ -477,7 +477,7 @@ require("lazy").setup({
   },
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.6",
+    tag = "v0.1.9", -- 0.1.6 calls the LSP without position_encoding and Neovim 0.11 warns on every jump
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   "mg979/vim-visual-multi",
