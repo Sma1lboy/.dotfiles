@@ -66,3 +66,26 @@ dev:
   autoqaConsent: granted
 extendedContext: true
 defaultThinkingLevel: medium
+skills:
+  ignoredSkills:
+    - claude/hyperframes
+    - claude/general-video
+    - claude/motion-graphics
+    - ponytail/ponytail
+    - wisp/wisp
+    - cheat-*
+    - aws-*
+    - gc-*
+    - threejs-*
+    - game-design
+    - literature-search-*
+    - semantic-scholar
+    - read-arxiv-paper
+task:
+  disabledAgents:
+    - code-reviewer
+    - code-simplifier
+    - comment-analyzer
+    - pr-test-analyzer
+    - silent-failure-hunter
+    - type-design-analyzer
