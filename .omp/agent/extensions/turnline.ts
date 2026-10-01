@@ -2,7 +2,7 @@
 // working row reads what the agent is doing and for how long ("Thinking · 12s",
 // "Reading config files · 1m 05s"), and every finished run leaves a dim
 // "Worked for 1m 23s" line in the transcript.
-import type { ExtensionAPI, ExtensionContext } from "@oh-my-pi/pi-coding-agent";
+import { AssistantMessageComponent, type ExtensionAPI, type ExtensionContext } from "@oh-my-pi/pi-coding-agent";
 
 const TICK_MS = 1000;
 /** The field omp's tools carry their intent in (`tools.intentTracing`). */
@@ -22,8 +22,29 @@ function labelOf(intent: unknown): string {
 	return typeof intent === "string" ? intent.trim().replace(/\s*\.+$/, "") : "";
 }
 
+// With hideThinkingBlock on, omp pulses a "✹ Thinking · 1.2k · 30 toks/s" row inside the
+// assistant block; the working row already says that, so the duplicate is dropped from render.
+const THINKING_PULSE_RE = /^\s*[✻✼❉❊✺✹✸✶] Thinking(?: · .*)?\s*$/;
+const PATCHED = Symbol.for("omp.turnline.thinking-pulse");
+
+function hideThinkingPulse(): void {
+	const proto = AssistantMessageComponent.prototype as unknown as Record<symbol | string, unknown>;
+	if (proto[PATCHED]) return;
+	proto[PATCHED] = true;
+	const render = AssistantMessageComponent.prototype.render;
+	AssistantMessageComponent.prototype.render = function (this: AssistantMessageComponent, width: number) {
+		const rows = render.call(this, width);
+		const at = rows.findLastIndex(row => THINKING_PULSE_RE.test(Bun.stripANSI(row)));
+		if (at === -1) return rows;
+		// The pulse is preceded by a spacer row whenever content sits above it.
+		const from = at > 0 && Bun.stripANSI(rows[at - 1]!).trim() === "" ? at - 1 : at;
+		return [...rows.slice(0, from), ...rows.slice(at + 1)];
+	};
+}
+
 export default function turnline(pi: ExtensionAPI) {
 	pi.setLabel("turnline");
+	hideThinkingPulse();
 	let startedAt: number | null = null;
 	let phase = WAITING;
 	let timer: Timer | undefined;
