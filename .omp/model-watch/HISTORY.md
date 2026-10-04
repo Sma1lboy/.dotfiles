@@ -29,3 +29,11 @@
 - Terminal-Bench 4.0 (https://benchlm.ai/benchmarks/terminal-bench-4): no new data seen.
 - DeepSWE v1.1 leaderboard exists (https://codingfleet.com/blog/deepswe-v11-leaderboard-2026/); scores not retrieved.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-10-04
+**Part 1**: no change. pi-catalog 18.6.1: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in models.json / kdl.
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- SWE-bench Pro (https://benchlm.ai/benchmarks/swe-bench-pro): unchanged — Opus 5.5 89.9%, Sonnet 5.5 81.3%, Fable 5.1 81.2%, Mythos 5 80.3%; Sakana Fugu-Ultra 73.7% (not in omp). benchlm notes ~30% of public tasks reportedly broken.
+- Terminal-Bench 4.0 (https://benchlm.ai/benchmarks/terminal-bench-4, snapshot 2026-10-02): GPT-6 Astra 58.18% (max) narrowly ahead of Fable 5.1 57.88%; effectively tied.
+- No candidate available in omp that is clearly stronger than current modelRoles.
