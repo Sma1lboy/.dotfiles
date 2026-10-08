@@ -45,3 +45,11 @@
 - SWE-bench Pro (https://benchlm.ai/benchmarks/swe-bench-pro): unchanged — Opus 5.5 89.9%, Sonnet 5.5 81.3%, Fable 5.1 81.2%, Mythos 5 80.3%; Sakana Fugu-Ultra 73.7% (not in omp).
 - Terminal-Bench 4.0 (https://benchlm.ai/benchmarks/terminal-bench-4, snapshot 2026-10-06): Opus 5.5 64.85%, Sonnet 5.5 61.82% now lead; GPT-6 Astra / GPT-6.1 Sol 58.18%; Fable 5.1 57.88%. Changed vs 10-04 snapshot (where Astra led) — new Opus/Sonnet entries.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-10-08
+**Part 1**: no change. pi-catalog 18.8.5: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in models.json / kdl.
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- SWE-bench Pro (https://benchlm.ai/benchmarks/swe-bench-pro, snapshot 2026-10-08): unchanged — Opus 5.5 89.9%, Sonnet 5.5 81.3%, Fable 5.1 81.2%, Mythos 5 80.3%, Sakana Fugu-Ultra 73.7% (not in omp), Qwen3.8 Max 67.7%, Tencent Hy4 preview 65.7%.
+- Terminal-Bench 4.0 (https://benchlm.ai/benchmarks/terminal-bench-4, snapshot 2026-10-07): unchanged vs 10-07 — Opus 5.5 64.85%, Sonnet 5.5 61.82%, GPT-6 Astra / GPT-6.1 Sol 58.18%, Fable 5.1 57.88%.
+- No candidate available in omp that is clearly stronger than current modelRoles.
