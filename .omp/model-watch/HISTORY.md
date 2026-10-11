@@ -61,3 +61,11 @@
 - Search found no new October data. Latest DeepSWE v1.1 snapshot (https://codingfleet.com/blog/deepswe-v11-leaderboard-2026/, updated 2026-07-25): Opus 5 74.0%, GPT-5.6 Sol 72.7%, Fable 5 69.7%, Kimi K3 68.5%; older than the benchlm figures below.
 - SWE-bench Pro / Terminal-Bench 4.0 (benchlm, last recorded 2026-10-08): unchanged — Opus 5.5 89.9% / 64.85%, Sonnet 5.5 81.3% / 61.82%.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-10-11
+**Part 1**: no change. pi-catalog 18.9.1: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in models.json / kdl (haiku-5-5 and mythos-5-1 exist but no role uses those families).
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- No October model releases or re-scores found. Terminal-Bench 4.0 mirrors disagree by evaluator: Vals snapshot 2026-09-27 (https://benchlm.ai/benchmarks/vals-terminal-bench-4) Opus 5.5 61.62%, GPT-6 Astra 57.07%, Sonnet 5.5 53.03%; LLM Stats (https://llm-stats.com/benchmarks/terminal-bench-4.0) GPT-6 Astra 57.7%, Fable 5.1 55.8%. Not comparable across evaluators.
+- SWE-bench Pro: no new data (last recorded 2026-10-08: Opus 5.5 89.9%).
+- No candidate available in omp that is clearly stronger than current modelRoles.
