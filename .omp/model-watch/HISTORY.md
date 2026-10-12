@@ -69,3 +69,10 @@
 - No October model releases or re-scores found. Terminal-Bench 4.0 mirrors disagree by evaluator: Vals snapshot 2026-09-27 (https://benchlm.ai/benchmarks/vals-terminal-bench-4) Opus 5.5 61.62%, GPT-6 Astra 57.07%, Sonnet 5.5 53.03%; LLM Stats (https://llm-stats.com/benchmarks/terminal-bench-4.0) GPT-6 Astra 57.7%, Fable 5.1 55.8%. Not comparable across evaluators.
 - SWE-bench Pro: no new data (last recorded 2026-10-08: Opus 5.5 89.9%).
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-10-12
+**Part 1**: no change. pi-catalog 18.10.2: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in models.json / kdl (haiku-5-5 and mythos-5-1 exist but no role uses those families).
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- No new releases or re-scores found. Latest recorded benchlm figures unchanged: SWE-bench Pro Opus 5.5 89.9% / Sonnet 5.5 81.3% (https://benchlm.ai/benchmarks/swe-bench-pro); Terminal-Bench 4.0 Opus 5.5 64.85% / Sonnet 5.5 61.82% (https://benchlm.ai/benchmarks/terminal-bench-4). Third-party blogs disagree on leaders (vendor-run vs Scale standardized), so no cross-source comparison.
+- No candidate available in omp that is clearly stronger than current modelRoles.
