@@ -98,3 +98,10 @@
 **Part 2** (report only; aggregator figures, unverified against primary sources):
 - No new releases or re-scores found. Unchanged: Terminal-Bench 4.0 (tbench.ai board via https://codingfleet.com/blog/tag/Claude%20Sonnet%205.5/, checked 2026-10-06) Opus 5.5 64.8%, Sonnet 5.5 61.8%; SWE-bench Pro (provider-reported, https://codingfleet.com/blog/swe-bench-pro-leaderboard-2026/) Opus 5.5 89.9%, Sonnet 5.5 81.3%. Terminal-Bench 2.1 is a different version (DeepSeek V4.1 Flash 90.6% there); not compared.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-10-17
+**Part 1**: no change. pi-catalog 18.11.3: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in models.json / kdl.
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- No new releases or re-scores found. Unchanged: Terminal-Bench 4.0 (tbench.ai board via https://codingfleet.com/blog/tag/Claude%20Sonnet%205.5/, checked 2026-10-06) Opus 5.5 64.8%, Sonnet 5.5 61.8%, GPT-6 Astra / GPT-6.1 Sol 58.2%; SWE-bench Pro (provider-reported, https://codingfleet.com/blog/swe-bench-pro-leaderboard-2026/) Opus 5.5 89.9%, Sonnet 5.5 81.3%. Sources still conflict on leaders (vendor-run vs standardized); not compared across.
+- No candidate available in omp that is clearly stronger than current modelRoles.
