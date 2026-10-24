@@ -147,3 +147,10 @@
 **Part 2** (report only; aggregator figures, unverified against primary sources):
 - No new releases or re-scores found. Search surfaced only September snapshots (SWE-bench Pro leaderboard, https://www.morphllm.com/swe-benchmark; Cognition SWE-2 on Terminal-Bench 2.1, https://www.datalearner.com/en/ai-models/pretrained-models/swe-2; https://tbench.ai/news). Different versions from the Terminal-Bench 4.0 figures tracked above; not compared.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-10-24
+**Part 1**: no change. pi-catalog 18.12.6: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in models.json / kdl.
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- No new releases or re-scores found. Search surfaced only Aug/Sep snapshots (SWE-bench Pro leaderboard, https://www.morphllm.com/swe-benchmark; Cognition SWE-2 on Terminal-Bench 2.1, https://www.datalearner.com/en/ai-models/pretrained-models/swe-2; https://benchlm.ai/benchmarks/terminalBench notes Terminal-Bench 4.0 is current). Different versions from the 4.0 figures tracked above; not compared.
+- No candidate available in omp that is clearly stronger than current modelRoles.
