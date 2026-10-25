@@ -154,3 +154,10 @@
 **Part 2** (report only; aggregator figures, unverified against primary sources):
 - No new releases or re-scores found. Search surfaced only Aug/Sep snapshots (SWE-bench Pro leaderboard, https://www.morphllm.com/swe-benchmark; Cognition SWE-2 on Terminal-Bench 2.1, https://www.datalearner.com/en/ai-models/pretrained-models/swe-2; https://benchlm.ai/benchmarks/terminalBench notes Terminal-Bench 4.0 is current). Different versions from the 4.0 figures tracked above; not compared.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-10-25
+**Part 1**: no change. pi-catalog 18.12.6: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in models.json / kdl.
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- No new releases or re-scores found. Unchanged: SWE-bench Pro (provider-reported, https://www.morphllm.com/swe-benchmark) Opus 5.5 89.9%, Sonnet 5.5 81.3%; Terminal-Bench 4.0 (https://codingfleet.com/blog/tag/Claude%20Sonnet%205.5/) Opus 5.5 64.8%, Sonnet 5.5 61.8%. Terminal-Bench 4.0 is scored per model+harness (https://www.tbench.ai/news/terminal-bench-4-0); one index lists Mythos 5.1 at 60.9% (unverified, https://benchlm.ai/benchmarks/terminalBench4). Terminal-Bench 2.1 items (Cognition SWE-2 92.8%, https://www.datalearner.com/en/ai-models/pretrained-models/swe-2) are a different version; not compared.
+- No candidate available in omp that is clearly stronger than current modelRoles.
