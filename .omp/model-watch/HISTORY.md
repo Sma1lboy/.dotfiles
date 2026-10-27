@@ -169,3 +169,10 @@
 - DeepSeek V4.1 Flash 1017 (minor Oct update): Terminal-Bench 4.0 31.2 → 42.3, measured via Claude Code harness, not DeepSeek's own (https://benchmarklist.com/models/deepseek-deepseek-v4.1-flash-1017/). Well below Opus 5.5 64.8% (4.0, tracked above); not in omp.
 - Terminal-Bench 4.0 is scored per model+harness (https://www.datalearner.com/en/benchmarks/terminal-bench-4-0). No SWE-bench Pro changes found.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-10-27
+**Part 1**: no change. pi-catalog 18.13.1: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). Catalog also lists haiku-5-5, mythos-5-1, gpt-6.1-terra (other families/not in roles); no newer ids in same families.
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- No new vendor releases or re-scores found. Surfaced only older/other-version items (Cognition SWE-2, https://www.datalearner.com/en/ai-models/pretrained-models/swe-2; SWE-bench Pro, https://www.morphllm.com/swe-benchmark; Recursive Flint 40B reportedly 89.7% SWE-bench Pro v2 / 54.9% Terminal-Bench 2.1, unverified, version differs from tracked 4.0 figures; not compared).
+- No candidate available in omp that is clearly stronger than current modelRoles.
