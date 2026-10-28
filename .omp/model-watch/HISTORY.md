@@ -176,3 +176,10 @@
 **Part 2** (report only; aggregator figures, unverified against primary sources):
 - No new vendor releases or re-scores found. Surfaced only older/other-version items (Cognition SWE-2, https://www.datalearner.com/en/ai-models/pretrained-models/swe-2; SWE-bench Pro, https://www.morphllm.com/swe-benchmark; Recursive Flint 40B reportedly 89.7% SWE-bench Pro v2 / 54.9% Terminal-Bench 2.1, unverified, version differs from tracked 4.0 figures; not compared).
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-10-28
+**Part 1**: no change. pi-catalog 18.13.3: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in models.json / kdl (gpt-6.1-terra, haiku-5-5, mythos-5-1 exist but are other families).
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- No new vendor releases or re-scores found. Terminal-Bench 4.0 official leaderboard snapshot (Oct 1): GPT-6 Astra/Codex 58.18%, Fable 5.1/Claude Code 57.88%, statistically tied (https://presenc.ai/research/terminal-bench-leaderboard-2026; https://www.datalearner.com/en/benchmarks/terminal-bench-4-0). No SWE-bench Pro changes found.
+- No candidate available in omp that is clearly stronger than current modelRoles.
