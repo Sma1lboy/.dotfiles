@@ -197,3 +197,10 @@
 **Part 2** (report only; aggregator figures, unverified against primary sources):
 - No new vendor releases or re-scores found. Search returned only stale Terminal-Bench 4.0 snapshots (Aug/Sep): Opus 5 51.82% (https://benchlm.ai/benchmarks/terminalBench4), Mythos 5.1 60.9% (Sep 2, https://anotherwrapper.com/tools/llm-pricing/evals/terminal-bench-4-0); Snorkel leaderboard https://snorkel.ai/leaderboard/terminal-bench-4-0/. Sources disagree; no SWE-bench Pro scores found.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-10-31
+**Part 1**: no change. pi-catalog 18.14.1: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in catalog (gpt-6.1-terra, haiku-5-5, mythos-5-1 exist but are other families).
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- No new vendor releases or re-scores found. Terminal-Bench 4.0 (Oct 1 official snapshot): GPT-6 Astra/Codex 58.18% vs Fable 5.1/Claude Code 57.88%, statistically tied (https://presenc.ai/research/terminal-bench-leaderboard-2026). Sep 2 snapshot Mythos 5.1 60.9% (https://anotherwrapper.com/tools/llm-pricing/evals/terminal-bench-4-0); sources disagree. Cognition SWE-2: 92.8 on TB 2.1 but 27.3 on TB 4.0 (https://www.datalearner.com/en/ai-models/pretrained-models/swe-2); versions not comparable. No Oct SWE-bench Pro results found.
+- No candidate available in omp that is clearly stronger than current modelRoles.
