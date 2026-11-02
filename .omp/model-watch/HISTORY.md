@@ -211,3 +211,10 @@
 **Part 2** (report only; aggregator figures, unverified against primary sources):
 - No new vendor releases or re-scores found. Terminal-Bench 4.0: tbench.ai board via Developers Digest (Oct 17) shows Opus 5.5 64.8% ±3.1 (https://www.developersdigest.tech/benchmarks/terminal-bench); Anthropic self-reports 66.4% (not on public board, https://presenc.ai/research/terminal-bench-leaderboard-2026). Older snapshots disagree (https://benchlm.ai/benchmarks/terminalBench4). No new SWE-bench Pro results.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-11-02
+**Part 1**: no change. pi-catalog 18.15.0: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in catalog (gpt-6.1-terra, haiku-5-5, mythos-5-1 exist but are other families).
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- No new vendor releases or re-scores found; latest items are Sep 2026. SWE-bench Pro snapshot (Sep 8): Fable 5.1 81.2%, Fable 5/Mythos 5 80.3%, Opus 5 79.2% (https://codingfleet.com/blog/tag/coding%20benchmark/?page=3). Terminal-Bench 4.0 is current version, not comparable with 2.x/3.0 scores (https://benchlm.ai/benchmarks/terminalBench4).
+- No candidate available in omp that is clearly stronger than current modelRoles.
