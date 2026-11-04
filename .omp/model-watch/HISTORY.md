@@ -225,3 +225,10 @@
 **Part 2** (report only; aggregator figures, unverified against primary sources):
 - No new vendor releases or re-scores found; newest items are Sep 2026. Terminal-Bench 4.0 snapshots still disagree by harness: Vals Opus 5.5 61.62% (https://benchlm.ai/benchmarks/vals-terminal-bench-4), AA GPT-6 Astra 59.1% (https://benchlm.ai/benchmarks/aaTerminalBench4). No new SWE-bench Pro results (https://www.datalearner.com/en/benchmarks/swe-bench-pro).
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-11-04
+**Part 1**: no change. pi-catalog 18.16.0: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in catalog (gpt-6.1-terra, haiku-5-5, mythos-5-1 exist but are other families).
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- No new vendor releases or re-scores found; newest items are Sep 2026. Terminal-Bench 4.0 sources still disagree: AA GPT-6 Astra xhigh 59.6% / Fable 5.1 55.1% (https://artificialanalysis.ai/pt/evaluations/terminalbench-4-0), Mythos 5.1 60.9% (https://benchmarklist.com/benchmarks/terminal_bench_4/), BenchLM Opus 5 51.82% (https://benchlm.ai/benchmarks/terminalBench4). No SWE-bench Pro scores found.
+- No candidate available in omp that is clearly stronger than current modelRoles.
