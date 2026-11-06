@@ -239,3 +239,10 @@
 **Part 2** (report only; aggregator figures, unverified against primary sources):
 - No new vendor releases or re-scores found; newest items still Sep 2026. Terminal-Bench 4.0 (66 tasks, Aug 2026) sources still disagree by harness: BenchLM Opus 5 51.82% (https://benchlm.ai/benchmarks/terminalBench4), AA GPT-6 Astra 59.1% (https://benchlm.ai/benchmarks/aaTerminalBench4), Fable 5.1 57.9% ±3.8 w/ Claude Code. Cognition SWE-2 weak on TB 4.0 (27.3) vs 92.8 on TB 2.1 – versions not comparable (https://benchmarklist.com/models/cognition-swe-2/). SWE-bench Pro has two versions, not comparable.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-11-06
+**Part 1**: no change. pi-catalog 18.17.0: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in catalog (gpt-6.1-terra, haiku-5-5, mythos-5-1 exist but are other families).
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- No new vendor releases or re-scores found; newest items still Sep/Oct 2026. Terminal-Bench 4.0 (66 tasks, maintenance release) boards still disagree by harness/date: Opus 5.5 64.8% ±3.1 (https://www.developersdigest.tech/benchmarks/terminal-bench), BenchLM Opus 5 51.82% (https://benchlm.ai/benchmarks/terminalBench4). No SWE-bench Pro results from November.
+- No candidate available in omp that is clearly stronger than current modelRoles.
