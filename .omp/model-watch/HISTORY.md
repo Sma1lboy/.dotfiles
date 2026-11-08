@@ -253,3 +253,10 @@
 **Part 2** (report only; aggregator figures, unverified against primary sources):
 - No new vendor releases found. SWE-bench Pro (BenchLM, Nov 6): Opus 5.5 89.9% (vendor-reported), Sonnet 5.5 81.3%, Fable 5.1 81.2% (https://benchlm.ai/benchmarks/swe-bench-pro). Terminal-Bench 4.0: Vals Opus 5.5 65.15% (https://www.vals.ai/benchmarks/terminal-bench-4); AA re-runs Sonnet 5.5 63.6%, Opus 5.5 59.6%, GPT-6 Astra 59.1% (https://codingfleet.com/blog/terminal-bench-4-leaderboard-2026/). Harness-dependent; not comparable across boards.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-11-08
+**Part 1**: no change. pi-catalog 18.18.1: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in catalog (gpt-6.1-terra, haiku-5-5, mythos-5-1 exist but are other families).
+
+**Part 2** (report only; aggregator figures, unverified against primary sources):
+- No new November vendor releases found. Terminal-Bench 4.0 is a Aug 2026 maintenance release (66 tasks), Vals says methodology unchanged from 2.1 but boards are not comparable across versions (https://vals.ai/benchmarks/terminal-bench-4, https://snorkel.ai/leaderboard/terminal-bench/). Unverified: Qwen3.8-Max SWE-bench Pro 67.7 / TB 2.1 86.6 (https://tech-insider.org/best-ai-model-for-coding-2026/); GPT-6 Astra TB 4.0 57.7% (https://benchmarklist.com/models/openai-gpt-6-astra/).
+- No candidate available in omp that is clearly stronger than current modelRoles.
