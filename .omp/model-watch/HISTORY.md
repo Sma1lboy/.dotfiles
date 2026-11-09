@@ -260,3 +260,10 @@
 **Part 2** (report only; aggregator figures, unverified against primary sources):
 - No new November vendor releases found. Terminal-Bench 4.0 is a Aug 2026 maintenance release (66 tasks), Vals says methodology unchanged from 2.1 but boards are not comparable across versions (https://vals.ai/benchmarks/terminal-bench-4, https://snorkel.ai/leaderboard/terminal-bench/). Unverified: Qwen3.8-Max SWE-bench Pro 67.7 / TB 2.1 86.6 (https://tech-insider.org/best-ai-model-for-coding-2026/); GPT-6 Astra TB 4.0 57.7% (https://benchmarklist.com/models/openai-gpt-6-astra/).
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-11-09
+**Part 1**: no change. pi-catalog 18.18.3: all roles already newest in family (fable-5-1, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No newer ids in catalog (gpt-6.1-terra, haiku-5-5, mythos-5-1 exist but are other families).
+
+**Part 2** (report only; single tracker, self-reported, unverified):
+- New: Moonshot Kimi K3.1 Pro (open weights, Nov 5), self-reported Terminal-Bench 4.0 65.7% (https://techpp.com/roundup/ai-model-launch-timeline/). No SWE-bench Pro score found. TB 4.0 (66 tasks) not comparable with 2.1 (https://vals.ai/benchmarks/terminal-bench-4). Not in omp catalog, so no suggestion.
+- No candidate available in omp that is clearly stronger than current modelRoles.
