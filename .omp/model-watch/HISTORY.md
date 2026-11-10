@@ -267,3 +267,10 @@
 **Part 2** (report only; single tracker, self-reported, unverified):
 - New: Moonshot Kimi K3.1 Pro (open weights, Nov 5), self-reported Terminal-Bench 4.0 65.7% (https://techpp.com/roundup/ai-model-launch-timeline/). No SWE-bench Pro score found. TB 4.0 (66 tasks) not comparable with 2.1 (https://vals.ai/benchmarks/terminal-bench-4). Not in omp catalog, so no suggestion.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-11-10
+**Part 1**: CHANGED. pi-catalog 18.18.6 adds `claude-fable-5-2` (anthropic provider, same family): `slow` and `advisor` anthropic/claude-fable-5-1 → anthropic/claude-fable-5-2. Others already newest in family (opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). Web search found no announcement coverage of Fable 5.2 (only catalog + docs links in pi-catalog), so release is catalog-confirmed only.
+
+**Part 2** (report only; aggregator figures, unverified):
+- No new Fable 5.2 benchmark scores found. Latest Fable 5.1 figures: SWE-bench Pro 81.2% (https://benchlm.ai/models/claude-fable-5-1), Terminal-Bench 4.0 55.8% (https://datasciencedojo.com/blog/claude-fable-5-1-performance-and-safety/); harness-dependent, not comparable across versions/boards.
+- No candidate available in omp that is clearly stronger than current modelRoles.
