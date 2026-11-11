@@ -274,3 +274,11 @@
 **Part 2** (report only; aggregator figures, unverified):
 - No new Fable 5.2 benchmark scores found. Latest Fable 5.1 figures: SWE-bench Pro 81.2% (https://benchlm.ai/models/claude-fable-5-1), Terminal-Bench 4.0 55.8% (https://datasciencedojo.com/blog/claude-fable-5-1-performance-and-safety/); harness-dependent, not comparable across versions/boards.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-11-11
+**Part 1**: no change. pi-catalog 18.18.8: all roles already newest in family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). New id `claude-mythos-5-2` in catalog (mythos family, not used by any role); gpt-6.1-terra, haiku-5-5 still other families.
+
+**Part 2** (report only; aggregator/self-reported figures, unverified):
+- No public benchmark scores yet for Mythos 5.2 or Fable 5.2; BenchLM still lists Mythos 5 at SWE-bench Pro 80.3% / Terminal-Bench 2.0 88% (https://benchlm.ai/models/claude-mythos-5).
+- November releases per roundup: SWE-2 Flash, GPT-6 Cyber, Ripple-65B Preview (TB 2.1 80.5% self-reported), Hy4, Kimi K3.1 Pro (TB 4.0 65.7% self-reported vs Opus 5.5 66.4 on same board) (https://thursdai.news/releases/2026-11). TB 4.0 vs 2.1 not comparable. None clearly stronger and in omp catalog.
+- No candidate available in omp that is clearly stronger than current modelRoles.
