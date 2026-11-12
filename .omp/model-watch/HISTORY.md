@@ -282,3 +282,11 @@
 - No public benchmark scores yet for Mythos 5.2 or Fable 5.2; BenchLM still lists Mythos 5 at SWE-bench Pro 80.3% / Terminal-Bench 2.0 88% (https://benchlm.ai/models/claude-mythos-5).
 - November releases per roundup: SWE-2 Flash, GPT-6 Cyber, Ripple-65B Preview (TB 2.1 80.5% self-reported), Hy4, Kimi K3.1 Pro (TB 4.0 65.7% self-reported vs Opus 5.5 66.4 on same board) (https://thursdai.news/releases/2026-11). TB 4.0 vs 2.1 not comparable. None clearly stronger and in omp catalog.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-11-12
+**Part 1**: no change. pi-catalog 18.19.0: all roles already newest in family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No new ids vs 18.18.8 (mythos-5-2, gpt-6.1-terra, haiku-5-5 are other families). Web: GPT-6.1 Astra reported shelved, no public id (https://aiidelist.com/blog/gpt-6-1-astra-update); no GPT-6.1 Luna.
+
+**Part 2** (report only; third-party/vendor figures, unverified):
+- Fable 5.2 / Mythos 5.2 officially announced Nov 9 (https://www.anthropic.com/news/claude-fable-and-mythos-5-2). Terminal-Bench-Science 0.1: Fable 5.2 74.6%, Mythos 5.2 75.3% (vendor). Terminal-Bench 4.0: Fable 5.2 ~60%, tied with Opus 5.5; Sonnet 5.5 ~4 pts higher (https://singularitymoments.com/content/fable-52-delivers-huge-math-gains-but-stumbles-on-daily-dev-work/). FrontierCode 2.0: Fable 5.2 49.1% vs Fable 5.1 32.4% (https://af.net/realtime/anthropic-unveils-claude-fable-and-mythos-5-2-with-49-1-coding-score/). No SWE-bench Pro score for 5.2 yet.
+- No other new November releases beyond those already logged (Kimi K3.1 Pro TB 4.0 65.7% self-reported; https://thursdai.news/releases/2026-11).
+- No candidate available in omp that is clearly stronger than current modelRoles. Note: on TB 4.0, Fable 5.2 (slow/advisor) does not beat Opus 5.5 / Sonnet 5.5 — no action, observation only.
