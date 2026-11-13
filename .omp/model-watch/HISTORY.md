@@ -290,3 +290,13 @@
 - Fable 5.2 / Mythos 5.2 officially announced Nov 9 (https://www.anthropic.com/news/claude-fable-and-mythos-5-2). Terminal-Bench-Science 0.1: Fable 5.2 74.6%, Mythos 5.2 75.3% (vendor). Terminal-Bench 4.0: Fable 5.2 ~60%, tied with Opus 5.5; Sonnet 5.5 ~4 pts higher (https://singularitymoments.com/content/fable-52-delivers-huge-math-gains-but-stumbles-on-daily-dev-work/). FrontierCode 2.0: Fable 5.2 49.1% vs Fable 5.1 32.4% (https://af.net/realtime/anthropic-unveils-claude-fable-and-mythos-5-2-with-49-1-coding-score/). No SWE-bench Pro score for 5.2 yet.
 - No other new November releases beyond those already logged (Kimi K3.1 Pro TB 4.0 65.7% self-reported; https://thursdai.news/releases/2026-11).
 - No candidate available in omp that is clearly stronger than current modelRoles. Note: on TB 4.0, Fable 5.2 (slow/advisor) does not beat Opus 5.5 / Sonnet 5.5 — no action, observation only.
+
+## 2026-11-13
+**Part 1**: no change. pi-catalog 18.20.0 (models.json format changed: `providers` is now a compact list, ids at `entry[2][i][0]`): all roles already newest in family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No new anthropic/openai-codex ids vs 18.19.0 (mythos-5-2, haiku-5-5, gpt-6.1-terra are other families).
+
+**Part 2** (report only; aggregator/self-reported figures, unverified):
+- Terminal-Bench 4.1 released Nov 9 (verifier fixes; 4.0 trials re-graded, ~1% of rewards changed, scores within prior CIs; 23 configs, top 65.8%) (https://snorkel.ai/?p=20114). Reported 4.1 board: Opus 5.5 65.8%, Sonnet 5.5 63.9%, GPT-6.1 Sol 60.9% (https://local-ai-zone.github.io/blog/November_2026_AI_Model_Updates.html). Do not mix with 4.0 numbers.
+- New: Google Gemini 4 family (argon/carbon/hydrogen; hydrogen launched Nov 12, now in catalog under google/vertex/openrouter). AA Terminal-Bench 4.0: Gemini 4 Carbon (High) 65.2%, Kimi K3.1 Pro 67.2% (https://artificialanalysis.ai/evaluations/terminalbench-v4-0); Argon TB 4.0 ~57% (https://computingforgeeks.com/gemini-4-argon-released-features-benchmarks/). No Hydrogen scores found.
+- New: Alibaba Qwen 4 (API Nov 11, open weights promised by Dec 20), self-reported TB 4.0 64.1% (https://local-ai-zone.github.io/blog/November_2026_AI_Model_Updates.html); not in omp catalog.
+- Fable 5.2: BenchLM shows "93" for SWE-bench Pro but appears to be a percentile, not a score (https://benchlm.ai/models/claude-fable-5-2). SWE-bench Pro leader still Opus 5.5 89.9% (https://benchlm.ai/benchmarks/swe-bench-pro).
+- Candidates: Kimi K3.1 Pro (AA TB 4.0 67.2%) and Gemini 4 Carbon (65.2%) are near/slightly above Opus 5.5 on one board, but within harness variance and no SWE-bench Pro scores, and `enabledProviders` is claude-only — not clearly stronger. No suggestion.
