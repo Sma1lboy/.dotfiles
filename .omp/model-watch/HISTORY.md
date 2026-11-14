@@ -300,3 +300,12 @@
 - New: Alibaba Qwen 4 (API Nov 11, open weights promised by Dec 20), self-reported TB 4.0 64.1% (https://local-ai-zone.github.io/blog/November_2026_AI_Model_Updates.html); not in omp catalog.
 - Fable 5.2: BenchLM shows "93" for SWE-bench Pro but appears to be a percentile, not a score (https://benchlm.ai/models/claude-fable-5-2). SWE-bench Pro leader still Opus 5.5 89.9% (https://benchlm.ai/benchmarks/swe-bench-pro).
 - Candidates: Kimi K3.1 Pro (AA TB 4.0 67.2%) and Gemini 4 Carbon (65.2%) are near/slightly above Opus 5.5 on one board, but within harness variance and no SWE-bench Pro scores, and `enabledProviders` is claude-only — not clearly stronger. No suggestion.
+
+## 2026-11-14
+**Part 1**: no change. pi-catalog 18.20.0 (same as yesterday): all roles already newest in family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No new anthropic/openai-codex ids (mythos-5-2, haiku-5-5, gpt-6.1-terra are other families). No new OpenAI/Anthropic announcements found.
+
+**Part 2** (report only; aggregator/vendor figures, unverified):
+- SWE-bench Pro: Fable 5.2 now shown as 93% (fixes yesterday's "percentile?" doubt), citing Anthropic's Nov 9 system card; Opus 5.5 89.9%, Sonnet 5.5 81.3% (https://benchlm.ai/benchmarks/swe-bench-pro, https://llmlearner.com/rankings/swe-bench-pro). Scale's standardized public set is a different setup with a different leader: Muse Spark 1.1 61.5% (https://www.morphllm.com/swe-bench-pro). Don't compare across the two.
+- Gemini 4 Hydrogen (GA Nov 12): Terminal-Bench 4.1 57.0% (Google mini-swe-agent harness, 5 attempts; flagged as not board-comparable) (https://www.benchlm.ai/benchmarks/terminal-bench-2). No SWE-bench score.
+- Other Nov 13 releases (HeyGen Decision 1, Hark Handoff 2) are not coding models (https://af.net/realtime/ai-model-releases-november-2026/).
+- No candidate available in omp that is clearly stronger than current modelRoles. Current Fable 5.2 (slow/advisor) leads vendor-reported SWE-bench Pro.
