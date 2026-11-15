@@ -309,3 +309,12 @@
 - Gemini 4 Hydrogen (GA Nov 12): Terminal-Bench 4.1 57.0% (Google mini-swe-agent harness, 5 attempts; flagged as not board-comparable) (https://www.benchlm.ai/benchmarks/terminal-bench-2). No SWE-bench score.
 - Other Nov 13 releases (HeyGen Decision 1, Hark Handoff 2) are not coding models (https://af.net/realtime/ai-model-releases-november-2026/).
 - No candidate available in omp that is clearly stronger than current modelRoles. Current Fable 5.2 (slow/advisor) leads vendor-reported SWE-bench Pro.
+
+## 2026-11-15
+**Part 1**: no change. pi-catalog 18.20.2: all roles already newest in family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No new same-family anthropic/openai-codex ids (mythos-5-2, haiku-5-5, gpt-6.1-terra are other families; `gpt-daybreak-{blue,red}-latest` are gated cyber-program aliases, skipped per rules — https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/).
+
+**Part 2** (report only; aggregator figures, unverified):
+- No new coding-model releases found for Nov 14–15 (latest still Gemini 4 Hydrogen Nov 12, HeyGen Decision 1 Nov 13; https://benchlm.ai/models/swe-2).
+- Terminal-Bench 4.0 (Vals, as of Nov 11, mini-swe-agent): Fable 5.2 and Opus 5.5 tied at 65.15%, Sonnet 5.5 64.14% (https://www.vals.ai/benchmarks/terminal-bench-4). Corrects the earlier third-party "~60%" Fable 5.2 figure on that board.
+- Terminal-Bench 2.1 (BenchLM, vendor-reported): SWE-2 92.8%, GPT-5.6 Sol 91.9% (https://benchlm.ai/benchmarks/terminalbench21). Different version, not comparable with 4.x.
+- No candidate available in omp that is clearly stronger than current modelRoles.
