@@ -318,3 +318,12 @@
 - Terminal-Bench 4.0 (Vals, as of Nov 11, mini-swe-agent): Fable 5.2 and Opus 5.5 tied at 65.15%, Sonnet 5.5 64.14% (https://www.vals.ai/benchmarks/terminal-bench-4). Corrects the earlier third-party "~60%" Fable 5.2 figure on that board.
 - Terminal-Bench 2.1 (BenchLM, vendor-reported): SWE-2 92.8%, GPT-5.6 Sol 91.9% (https://benchlm.ai/benchmarks/terminalbench21). Different version, not comparable with 4.x.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-11-16
+**Part 1**: no change. pi-catalog 18.21.0: all roles already newest in family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No new same-family anthropic/openai-codex ids (mythos-5-2, haiku-5-5, gpt-6.1-terra are other families; `gpt-daybreak-*-latest` skipped). No new OpenAI/Anthropic announcements found.
+
+**Part 2** (report only; vendor/third-party figures, unverified):
+- New (Nov 15, single low-quality source): Agnes AI "Agnes 2.5 Pro Theta" open weights (~188B, Apache 2.0), model card claims SWE-bench Pro 64.1 (https://newstodayworld.org/breaking-news/2026/11/16/prince-mario-max-schaumburg-lippe-agnes-ai-posts-188b-open-model-on-hugging-face/). Not in omp catalog.
+- Gemini 4 Hydrogen: independent Terminal-Bench 4.0 54% vs Google's TB 4.1 57% (different versions/harnesses) (https://the-decoder.com/googles-gemini-4-hydrogen-outscores-the-bigger-argon-just-four-weeks-after-its-launch/).
+- DeepSeek V4.1 Flash (1017 update): DeepSWE v1.1 77.0 (mini-SWE-v2), Terminal-Bench 4.0 42.3 (Claude Code harness) (https://www.morphllm.com/deepseek-v4-1-flash). Baidu ERNIE 5.5 Flash Preview (Nov 11): TB 4.0 46.5 (https://www.orcarouter.ai/blog/ernie-5-5-flash-preview-launch-post-benchmarks).
+- No candidate available in omp that is clearly stronger than current modelRoles (Vals TB 4.0: Fable 5.2 / Opus 5.5 65.15%, Sonnet 5.5 64.14%, unchanged).
