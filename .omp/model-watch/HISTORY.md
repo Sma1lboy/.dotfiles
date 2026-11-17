@@ -327,3 +327,12 @@
 - Gemini 4 Hydrogen: independent Terminal-Bench 4.0 54% vs Google's TB 4.1 57% (different versions/harnesses) (https://the-decoder.com/googles-gemini-4-hydrogen-outscores-the-bigger-argon-just-four-weeks-after-its-launch/).
 - DeepSeek V4.1 Flash (1017 update): DeepSWE v1.1 77.0 (mini-SWE-v2), Terminal-Bench 4.0 42.3 (Claude Code harness) (https://www.morphllm.com/deepseek-v4-1-flash). Baidu ERNIE 5.5 Flash Preview (Nov 11): TB 4.0 46.5 (https://www.orcarouter.ai/blog/ernie-5-5-flash-preview-launch-post-benchmarks).
 - No candidate available in omp that is clearly stronger than current modelRoles (Vals TB 4.0: Fable 5.2 / Opus 5.5 65.15%, Sonnet 5.5 64.14%, unchanged).
+
+## 2026-11-17
+**Part 1**: no change. pi-catalog 18.22.0: all roles already newest in family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6-astra, gpt-6.1-sol, gpt-6-luna). No new same-family anthropic/openai-codex ids (mythos-5-2, haiku-5-5, gpt-6.1-terra are other families; `-wm` skipped). No new OpenAI/Anthropic announcements found.
+
+**Part 2** (report only; vendor/aggregator figures, unverified):
+- New (Nov 17): Alibaba Qwen4-Max. Alibaba reports ~62% lower avg task cost on its internal Work360 eval. Coding results are mixed: roughly level on one coding-agent benchmark but behind elsewhere, and an independent aggregate ranks it below the top US models and Kimi K3.1 Pro (https://venturebeat.com/technology/alibabas-qwen4-max-cuts-ai-task-costs-but-benchmarks-show-an-uneven-challenge-to-frontier-rivals). BenchLM shows its TB 2.1 / coding scores as "coming soon" (https://benchlm.ai/md/compare/qwen4-max-vs-swe-2.md). Not in omp catalog.
+- LLM Stats coding index (Nov 2026): Fable 5.2 #1 (49.8), ahead of Opus 5.5 and Sonnet 5.5 (https://llm-stats.com/leaderboards/best-ai-for-coding).
+- OpenCode usage (7d to Nov 17): DeepSeek V4.1 Flash leads usage (https://opencode.ai/data/). This is a usage ranking, not a benchmark.
+- No candidate available in omp that is clearly stronger than current modelRoles.
