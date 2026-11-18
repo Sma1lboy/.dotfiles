@@ -336,3 +336,15 @@
 - LLM Stats coding index (Nov 2026): Fable 5.2 #1 (49.8), ahead of Opus 5.5 and Sonnet 5.5 (https://llm-stats.com/leaderboards/best-ai-for-coding).
 - OpenCode usage (7d to Nov 17): DeepSeek V4.1 Flash leads usage (https://opencode.ai/data/). This is a usage ranking, not a benchmark.
 - No candidate available in omp that is clearly stronger than current modelRoles.
+
+## 2026-11-18
+**Part 1**: bumped 2 roles. pi-catalog 18.22.2 adds `gpt-6.2-astra` and `gpt-6.2-sol` (in openai-codex models.json and .kdl). OpenAI launched them Nov 17 (https://the-decoder.com/openai-launches-gpt-6-2-astra-and-sol-with-lower-api-prices-and-some-benchmark-gains/).
+- plan: `gpt-6-astra` → `gpt-6.2-astra`
+- smol: `gpt-6.1-sol` → `gpt-6.2-sol`
+- Unchanged: fable-5-2, opus-5-5, sonnet-5-5, gpt-6-luna (no newer luna; mythos-5-2, haiku-5-5, gpt-6.1-terra are other families; `-wm` skipped).
+
+**Part 2** (report only; vendor/third-party figures, unverified):
+- GPT-6.2 Astra: Terminal-Bench-Science 0.1 is 77.1% per OpenAI, +9 pts over GPT-6 Astra at <1/3 cost per task. GPT-6.2 Sol scores 68.0% on the same benchmark. API price $8/$40 per MTok. Vals Terminal-Bench 4 reportedly ranks Astra #5 and Sol #7, below Opus 5.5 / Fable 5.2 (https://the-decoder.com/openai-launches-gpt-6-2-astra-and-sol-with-lower-api-prices-and-some-benchmark-gains/, https://www.vals.ai/benchmarks/terminal-bench-4). TB-Science 0.1 is not comparable with TB 4.x.
+- Reception: VentureBeat reports negative power-user reception ("essentially unusable"). Artificial Analysis ties Sol's coding-agent decline mostly to a 14-pt drop on SWE-Atlas-QnA-AA (https://venturebeat.com/technology/essentially-unusable-openai-launches-gpt-6-2-astra-and-sol-to-negative-reception-from-ai-power-users). Watch smol/plan quality after this bump.
+- No official SWE-bench score for GPT-6.2. The only figure (Verified 79.4%) comes from a "leak" blog and is unreliable (https://apivale.com/blog/gpt-6-2-astra-leaks-benchmarks/).
+- No other new coding-model releases found for Nov 17–18. No candidate available in omp is clearly stronger than current modelRoles.
