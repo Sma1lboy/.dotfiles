@@ -348,3 +348,12 @@
 - Reception: VentureBeat reports negative power-user reception ("essentially unusable"). Artificial Analysis ties Sol's coding-agent decline mostly to a 14-pt drop on SWE-Atlas-QnA-AA (https://venturebeat.com/technology/essentially-unusable-openai-launches-gpt-6-2-astra-and-sol-to-negative-reception-from-ai-power-users). Watch smol/plan quality after this bump.
 - No official SWE-bench score for GPT-6.2. The only figure (Verified 79.4%) comes from a "leak" blog and is unreliable (https://apivale.com/blog/gpt-6-2-astra-leaks-benchmarks/).
 - No other new coding-model releases found for Nov 17–18. No candidate available in omp is clearly stronger than current modelRoles.
+
+## 2026-11-19
+**Part 1**: no change. pi-catalog 19.0.0 (new major version; models.json `openai-codex` list no longer includes `gpt-6.2-*`, but `openai-codex.kdl` still lists `gpt-6.2-astra` / `gpt-6.2-sol`, so the union is the same). All roles are already the newest in their family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6.2-astra, gpt-6.2-sol, gpt-6-luna). No new same-family anthropic/openai-codex ids (mythos-5-2, haiku-5-5, gpt-6.1-terra are other families; `-wm` / `gpt-daybreak-*-latest` skipped). No new OpenAI/Anthropic announcements found.
+
+**Part 2** (report only; vendor/secondary figures, unverified):
+- New (Nov 18): Google Gemini 4 Neon, which sits between Carbon and Hydrogen. Pricing is $3/$15 per MTok. AA Intelligence Index 61 vs Carbon 60. Reported AA coding index is 58.6 or 59 (sources differ). Google claims coding is at Opus 5.5 level (https://9to5google.com/2026/11/18/gemini-4-neon-announcement/, https://oodaloop.com/briefs/technology/google-launches-gemini-4-neon-with-claude-opus-5-5-level-coding-performance-at-25-lower-api-token-prices/). No SWE-bench / TB 4.x score found. Not in pi-catalog 19.0.0.
+- New (Nov 17): Microsoft MAI Code 2 / MAI Code 2 Flash. Microsoft uses DeepSWE 1.1 instead of SWE-bench. Average pass rate 63.2% (Flash 61.0%) across DeepSWE 1.1, TB 2.1, SWE Atlas and FrontierCode v1.1. On Terminal-Bench 2.1, MAI Code 2 scores 84.6% vs GPT-6.1 Sol 85.0% and Opus 5.5 78.7% (Microsoft chart). On SWE Atlas it scores 43.1%, 14.4 pts below Opus 5.5 (https://thenewstack.io/microsoft-mai-code-2/, https://www.unite.ai/?p=522546). TB 2.1 is not comparable with 4.x. Not in pi-catalog.
+- Vals index (Nov 18) reports a model in the Sol family at #1 on SWE-bench Verified (96.20%) and TB 2.1 (85.77%), per search summary, unverified (https://www.vals.ai/home).
+- No candidate available in omp is clearly stronger than current modelRoles.
