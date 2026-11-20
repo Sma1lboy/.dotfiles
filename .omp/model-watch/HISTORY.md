@@ -357,3 +357,17 @@
 - New (Nov 17): Microsoft MAI Code 2 / MAI Code 2 Flash. Microsoft uses DeepSWE 1.1 instead of SWE-bench. Average pass rate 63.2% (Flash 61.0%) across DeepSWE 1.1, TB 2.1, SWE Atlas and FrontierCode v1.1. On Terminal-Bench 2.1, MAI Code 2 scores 84.6% vs GPT-6.1 Sol 85.0% and Opus 5.5 78.7% (Microsoft chart). On SWE Atlas it scores 43.1%, 14.4 pts below Opus 5.5 (https://thenewstack.io/microsoft-mai-code-2/, https://www.unite.ai/?p=522546). TB 2.1 is not comparable with 4.x. Not in pi-catalog.
 - Vals index (Nov 18) reports a model in the Sol family at #1 on SWE-bench Verified (96.20%) and TB 2.1 (85.77%), per search summary, unverified (https://www.vals.ai/home).
 - No candidate available in omp is clearly stronger than current modelRoles.
+
+## 2026-11-20
+**Part 1**: no change. pi-catalog 19.0.1 changes the models.json format to a compact `providers` list, so ids are now read from there plus the `.kdl` files. All roles are already the newest in their family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6.2-astra, gpt-6.2-sol, gpt-6-luna). No new same-family anthropic/openai-codex ids (mythos-5-2, haiku-5-5, gpt-6.1-terra are other families; `-wm` / `gpt-daybreak-*-latest` skipped). No new OpenAI/Anthropic announcements found.
+
+**Part 2** (report only; vendor/secondary figures, unverified):
+- Gemini 4 Neon (Nov 18) is now in pi-catalog 19.0.1 (`gemini-4-neon`). Google's table (via https://officechai.com/ai/gemini-4-neon-benchmarks/) shows:
+  - Terminal-Bench 4.1 (cheating-adjusted): Neon 65.2% vs Opus 5.5 65.8% vs GPT-6.2 Sol 61.5%.
+  - FrontierCode 2.0: Neon 46.2% / Opus 5.5 47.3% / Sol 43.8%.
+  - AutomationBench (version not given): Neon 56.3% vs Opus 5.5 42.5% (Anthropic's own figure is 40.0%) vs Sol 41.3%.
+  - "SWE-sweep" (a new benchmark, not SWE-bench): Neon 39.0% (provider harness) / 12.8% (mini-SWE).
+  - AA Intelligence Index: Neon 61 vs Opus 5.5 (Max) 59 (https://artificialanalysis.ai/models/comparisons/gemini-4-neon-vs-claude-opus-5-5).
+  - No SWE-bench Verified/Pro or DeepSWE score.
+- Cloudflare Clairic / Clairic-flash (Nov 18) has no benchmark scores (https://af.net/realtime/ai-model-releases-november-2026/). No other coding-model releases found for Nov 19–20.
+- Candidate: Gemini 4 Neon is clearly stronger only on AutomationBench, roughly level with Opus 5.5 on coding (TB 4.1, FrontierCode). `enabledProviders` is claude-only. No role change suggested. If browser/automation agent work matters, try it ad hoc.
