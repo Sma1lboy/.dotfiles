@@ -371,3 +371,13 @@
   - No SWE-bench Verified/Pro or DeepSWE score.
 - Cloudflare Clairic / Clairic-flash (Nov 18) has no benchmark scores (https://af.net/realtime/ai-model-releases-november-2026/). No other coding-model releases found for Nov 19–20.
 - Candidate: Gemini 4 Neon is clearly stronger only on AutomationBench, roughly level with Opus 5.5 on coding (TB 4.1, FrontierCode). `enabledProviders` is claude-only. No role change suggested. If browser/automation agent work matters, try it ad hoc.
+
+## 2026-11-21
+**Part 1**: no change. pi-catalog 19.1.0: all roles are already the newest in their family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6.2-astra, gpt-6.2-sol, gpt-6-luna). No new same-family anthropic/openai-codex ids (mythos-5-2, haiku-5-5, gpt-6.1-terra are other families; `gpt-6-luna-decisions` is a variant, not a newer version; `-fast`/effort suffixes skipped). No new OpenAI/Anthropic announcements found.
+
+**Part 2** (report only; aggregator/blog figures, unverified):
+- No new coding-model releases found for Nov 20–21. The most recent are still Gemini 4 Neon and MAI Code 2 / Flash (Nov 18) (https://af.net/realtime/ai-model-releases-november-2026/, https://local-ai-zone.github.io/blog/November_2026_AI_Model_Updates.html).
+- Kimi K3.1 Pro: one blog reports Terminal-Bench 4.0 at 65.7%, vs GPT-6 Astra 58.2% (https://iotdigitaltwinplm.com/ai-coding-model-leaderboard-november-2026-swe-bench-verified-terminal-bench-aider-polyglot-scores-an/). Single source, harness not stated. Not directly comparable with Vals TB 4.0 (Fable 5.2 / Opus 5.5 65.15%).
+- Terminal-Bench 4.1 was released Nov 9. The same leaderboard says SWE-bench Verified and Aider Polyglot have stopped taking new frontier submissions (same source as above).
+- DeepSeek V4.1 Flash DeepSWE v1.1 is 74.2 (own harness, https://www.morphllm.com/best-open-source-llm) vs 77.0 (mini-SWE-v2, 11-16 entry). The two figures use different harnesses.
+- No candidate available in omp is clearly stronger than current modelRoles.
