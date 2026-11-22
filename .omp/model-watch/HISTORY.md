@@ -381,3 +381,13 @@
 - Terminal-Bench 4.1 was released Nov 9. The same leaderboard says SWE-bench Verified and Aider Polyglot have stopped taking new frontier submissions (same source as above).
 - DeepSeek V4.1 Flash DeepSWE v1.1 is 74.2 (own harness, https://www.morphllm.com/best-open-source-llm) vs 77.0 (mini-SWE-v2, 11-16 entry). The two figures use different harnesses.
 - No candidate available in omp is clearly stronger than current modelRoles.
+
+## 2026-11-22
+**Part 1**: no change. pi-catalog is still 19.1.0, the same as yesterday. All roles are already the newest in their family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6.2-astra, gpt-6.2-sol, gpt-6-luna). No new same-family anthropic/openai-codex ids (mythos-5-2, haiku-5-5, gpt-6.1-terra are other families; `-wm` / `-pro` / `gpt-daybreak-*-latest` skipped). No new OpenAI/Anthropic announcements found.
+
+**Part 2** (report only; vendor/aggregator figures, unverified):
+- New (Nov 20): RadixArk DaisyRose-27B. It is an Apache 2.0 open-weight agentic coding model built on Qwen3.8-27B and trained with RL only. Terminal-Bench 4.1 is 12.0, reported as more than doubling the base model (https://www.marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model/). Small model, far below the frontier. Not in pi-catalog.
+- New (Nov 20, lab-reported, aggregator summary): Thinking Machines Inkling 2 Mini. DeepSWE v1.1 is 48.2% and SWE-bench Verified is 79.2% (bash only) (https://fourweekmba.com/ai-model-benchmarks/). pi-catalog only has `inkling-2-small`, not Mini.
+- AA Coding Agent Index: sources disagree on the leader. One says Gemini 4 Neon is #1 at 59 (as of Nov 20). Another snapshot (Nov 19) says Claude Code + Fable 5.2 (Xhigh) leads at 58.5% (https://benchlm.ai/benchmarks/aacodingagents, https://geotoolbox.ai/blog/best-ai-model). Treat these as roughly level.
+- Official Terminal-Bench re-grade (Nov 9; TB 4.1 runs 5 trials per task): Opus 5.5 + Claude Code 65.8%, Sonnet 5.5 63.9% (https://www.benchleader.com/benchmarks/coding). Matches the Google table in the 11-20 entry.
+- No candidate available in omp is clearly stronger than current modelRoles.
