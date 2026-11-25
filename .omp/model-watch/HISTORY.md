@@ -409,3 +409,12 @@
 - Snorkel's Terminal-Bench 4.1 board ranks Copilot Fusion (max) at 71.2% ±2.9, then Fable 5.2 at 65.8%, GPT-6.2 Astra 62.1%, GPT-6.2 Sol 61.5% and Gemini 4 Neon 61.2% (https://snorkel.ai/leaderboard/terminal-bench/). Neon is below Google's own 65.2% figure on the same version.
 - No other new coding-model releases or DeepSWE / SWE-bench re-scores found for Nov 23–24.
 - No candidate available in omp is clearly stronger than current modelRoles.
+
+## 2026-11-25
+**Part 1**: no change. pi-catalog 19.2.0 (new minor version): all roles are already the newest in their family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6.2-astra, gpt-6.2-sol, gpt-6-luna). No new same-family anthropic/openai-codex ids (no `gpt-6.3-*`, `gpt-7*` or newer claude ids; mythos-5-2, haiku-5-5 are other families; `-wm` variants skipped). No new OpenAI/Anthropic announcements found; "Fable 5.5" / "Mythos 5.5" remain early-November leak reports only (https://cryptobriefing.com/anthropic-fable-5-5-openai-gpt-6-2-astra/).
+
+**Part 2** (report only; vendor/secondary figures, unverified):
+- New (Nov 24): Cognition SWE-2.1. Terminal-Bench 4.1 is reported at 50.0 (up from 24.2 for SWE-2), with a large ExploitBench gain; still behind Opus 5.5 (TB 4.1 65.8%) on coding rows. Vendor-reported, unaudited (https://orcarouter.ai/blog/cognition-swe-2-1-release). Windsurf/Devin-only, not in pi-catalog.
+- New (Nov 24): PrismML Bonsai 2.5, a 27B on-device model built on Qwen3.8, Apache 2.0. SWE-bench Verified reportedly rises from 60.8 to 75.6 (https://9to5mac.com/2026/11/24/prismmls-bonsai-2-5-brings-better-coding-and-tool-use-to-on-device-ai). Small model, far below the frontier.
+- Terminal-Bench 4.1 board unchanged at the top: Opus 5.5 65.76%, Sonnet 5.5 63.94% (https://www.benchlm.ai/benchmarks/terminal-bench-2, https://snorkel.ai/leaderboard/terminal-bench/). No new DeepSWE 1.1 / SWE-bench re-scores found; Epoch flags >20% of DeepSWE v1.1 tasks as flawed (https://epoch.ai/benchmarks/deepswe/review).
+- No candidate available in omp is clearly stronger than current modelRoles.
