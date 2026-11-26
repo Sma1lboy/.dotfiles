@@ -418,3 +418,13 @@
 - New (Nov 24): PrismML Bonsai 2.5, a 27B on-device model built on Qwen3.8, Apache 2.0. SWE-bench Verified reportedly rises from 60.8 to 75.6 (https://9to5mac.com/2026/11/24/prismmls-bonsai-2-5-brings-better-coding-and-tool-use-to-on-device-ai). Small model, far below the frontier.
 - Terminal-Bench 4.1 board unchanged at the top: Opus 5.5 65.76%, Sonnet 5.5 63.94% (https://www.benchlm.ai/benchmarks/terminal-bench-2, https://snorkel.ai/leaderboard/terminal-bench/). No new DeepSWE 1.1 / SWE-bench re-scores found; Epoch flags >20% of DeepSWE v1.1 tasks as flawed (https://epoch.ai/benchmarks/deepswe/review).
 - No candidate available in omp is clearly stronger than current modelRoles.
+
+## 2026-11-26
+**Part 1**: no change. pi-catalog 19.2.1 (patch version): all roles are already the newest in their family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6.2-astra, gpt-6.2-sol, gpt-6-luna). No new same-family anthropic/openai-codex ids (no `gpt-6.3-*`, `gpt-7*` or newer claude ids; mythos-5-2, haiku-5-5, gpt-6.1-terra are other families; `-wm` / `gpt-daybreak-*-latest` skipped). No new OpenAI/Anthropic model announcements found; OpenAI's news is a shared ChatGPT+Codex usage meter starting in December, not a model (https://dev.to/hiroki-ii-ai/ai-daily-digest-november-26-2026-one-meter-for-chatgpt-and-codex-cognition-doubles-down-europe-2j0o).
+
+**Part 2** (report only; vendor/secondary figures, unverified):
+- New (Nov 25): Sakana AI Namazu Small, a 30B reasoning model built on Nemotron 3 Nano. Vendor-reported BrowseComp 73.5 and BrowseComp-plus 50.1. No SWE-bench, Terminal-Bench or DeepSWE scores. Not in pi-catalog (same source as above).
+- Cognition SWE-2.1 (Nov 24, covered 11-25): adds a Lightning variant (Cerebras, ~600 tok/s) and a Cyber variant. It is built on Kimi K3 and is Devin-only, with no API (same source).
+- Microsoft MAI Base 2 was described Nov 23 but has not been released.
+- No new Terminal-Bench 4.1, DeepSWE 1.1 or SWE-bench re-scores found. TB 4.1 still has Opus 5.5 on top at 65.8% among single models (https://snorkel.ai/leaderboard/terminal-bench/).
+- No candidate available in omp is clearly stronger than current modelRoles.
