@@ -428,3 +428,12 @@
 - Microsoft MAI Base 2 was described Nov 23 but has not been released.
 - No new Terminal-Bench 4.1, DeepSWE 1.1 or SWE-bench re-scores found. TB 4.1 still has Opus 5.5 on top at 65.8% among single models (https://snorkel.ai/leaderboard/terminal-bench/).
 - No candidate available in omp is clearly stronger than current modelRoles.
+
+## 2026-11-27
+**Part 1**: no change. pi-catalog is still 19.2.1, the same as yesterday. All roles are already the newest in their family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6.2-astra, gpt-6.2-sol, gpt-6-luna). No new same-family anthropic/openai-codex ids (no `gpt-6.3-*`, `gpt-7*` or newer claude ids; mythos-5-2, haiku-5-5, gpt-6.1-terra are other families; `-wm` / `gpt-daybreak-*-latest` skipped). No new OpenAI/Anthropic model announcements found.
+
+**Part 2** (report only; vendor/secondary figures, unverified):
+- No new coding-model releases found for Nov 26–27. The coverage this week is follow-up on models already logged: Cognition SWE-2.1, which still trails Opus 5.5 on every benchmark (https://thenewstack.io/cognition-swe21-coding-model), and PrismML Bonsai 2.5 at SWE-bench Verified 75.6, with no independent reproduction yet (https://techtimes.com/articles/331569/20261126/local-ai-coding-model-jumps-608-756-swe-bench-verified-same-size-prismml-says.htm).
+- One aggregator snippet mentions "Poolside Laguna S 2.1" at Terminal-Bench 2.1 70.2%. It is unconfirmed: Poolside release notes only list Laguna XS 2.1, from June (https://docs.poolside.ai/release-notes/overview). It is also an old TB version, not comparable.
+- Terminal-Bench 4.1 top is unchanged: Opus 5.5 65.76%, Sonnet 5.5 63.94% (https://www.benchlm.ai/benchmarks/terminal-bench-2, https://snorkel.ai/leaderboard/terminal-bench/). No new DeepSWE 1.1 or SWE-bench re-scores found.
+- No candidate available in omp is clearly stronger than current modelRoles.
