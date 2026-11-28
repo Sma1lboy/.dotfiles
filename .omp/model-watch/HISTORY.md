@@ -437,3 +437,12 @@
 - One aggregator snippet mentions "Poolside Laguna S 2.1" at Terminal-Bench 2.1 70.2%. It is unconfirmed: Poolside release notes only list Laguna XS 2.1, from June (https://docs.poolside.ai/release-notes/overview). It is also an old TB version, not comparable.
 - Terminal-Bench 4.1 top is unchanged: Opus 5.5 65.76%, Sonnet 5.5 63.94% (https://www.benchlm.ai/benchmarks/terminal-bench-2, https://snorkel.ai/leaderboard/terminal-bench/). No new DeepSWE 1.1 or SWE-bench re-scores found.
 - No candidate available in omp is clearly stronger than current modelRoles.
+
+## 2026-11-28
+**Part 1**: no change. pi-catalog is still 19.2.1, the same as yesterday. All roles are already the newest in their family (fable-5-2, opus-5-5, sonnet-5-5, gpt-6.2-astra, gpt-6.2-sol, gpt-6-luna). No new same-family anthropic/openai-codex ids (no `gpt-6.3-*`, `gpt-7*` or newer claude ids; mythos-5-2, haiku-5-5, gpt-6.1-terra are other families; `-wm` / `-fast` / effort suffixes / `gpt-daybreak-*-latest` skipped). No new OpenAI/Anthropic model announcements found.
+
+**Part 2** (report only; vendor/secondary figures, unverified):
+- No new coding-model releases found for Nov 27–28 from any vendor (Google, xAI, Moonshot, Zhipu, DeepSeek, Qwen).
+- Cognition SWE-2.1 follow-up coverage only (https://thenewstack.io/cognition-swe21-coding-model/, https://www.unite.ai/cognition-releases-swe-2-1-with-major-coding-and-cybersecurity-gains/): Cognition's own table has Terminal-Bench 4.1 SWE-2.1 50.0, Kimi K3.1 59.7, Opus 5.5 65.8. Nothing new.
+- No new DeepSWE 1.1, Terminal-Bench 4.1 or SWE-bench re-scores found. The llm-stats DeepSWE 1.1 page snippet looks stale compared with the 11-23 entry (https://llm-stats.com/benchmarks/deepswe-1.1).
+- No candidate available in omp is clearly stronger than current modelRoles.
